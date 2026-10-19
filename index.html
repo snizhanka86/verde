@@ -116,6 +116,10 @@ footer .fb{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,25
 .hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;-webkit-mask-image:none;mask-image:none;opacity:1}
 .hs{background:linear-gradient(90deg,rgba(10,20,14,.72),rgba(10,20,14,.15) 65%),linear-gradient(180deg,rgba(10,20,14,.5),rgba(10,20,14,0) 28%,rgba(10,20,14,.55) 100%)}
 .ha{flex-direction:column;align-items:flex-start;gap:20px}.hero .ha p:last-child{order:-1;max-width:46ch}
+/* v21: на вузьких вертикальних екранах показуємо відео повністю, а не обрізаним */
+@media(max-aspect-ratio:1/1) and (prefers-reduced-motion:no-preference){
+.hero img{filter:blur(22px) brightness(.8);transform:scale(1.15)}
+.hero video{inset:auto;top:calc(env(safe-area-inset-top,0px) + 118px);left:0;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:transparent}}
 @media(prefers-reduced-motion:reduce){.hero video{display:none}}
 .pg:not(#home){padding-top:0}
 .pg:not(#home)>section:first-child>h2:first-child{width:100vw;margin:0 0 32px calc(50% - 50vw);padding:150px max(20px,calc(50vw - 590px)) 44px;background:#13261a;color:#fff;font-size:clamp(2.4rem,7vw,5rem);font-weight:800;letter-spacing:-.04em;line-height:1}
