@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: замінити YOUR-DOMAIN на реальний домен (https://) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://YOUR-DOMAIN/</loc></url>
+  <url><loc>https://verde-nu-five.vercel.app/</loc></url>
 </urlset>
