@@ -29,279 +29,255 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/img-d1d0ddaa.webp" fetchpriority="high">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap"></noscript>
 <style>
-:root{--bg:#ece8e1;--ink:#18241c;--mut:#5c645d;--card:#f7f4ef;--g:#1d5b3a;--g2:#dfe8dd;--r:#b81d35;--p:#f1d3da;--p2:#f7e6e9;--ln:#d8d2c7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;margin:0 0 .5em}
-h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800}h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}h3{font-size:1.15rem}
+:root{--bg:#F5F1E9;--paper:#FBF9F5;--card:#FBF9F5;--sand:#E8E1D3;--g:#17402C;--g0:#0F2A1D;--bord:#7B2A3A;--ink:#1F2A23;--mut:#5C665E;--ln:#DDD6C8;--sage:#DDE5D8;--lr:#A61919;--lg:#1D5B3A;--serif:'Cormorant Garamond',Georgia,serif;--sans:Manrope,system-ui,sans-serif;color-scheme:light;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);overflow-x:clip}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4vw,3.25rem);color:var(--g)}h3{font-size:1.375rem;font-weight:600}
 a{color:inherit}button{font:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--r);outline-offset:2px}
-.w{max-width:1100px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln)}
-.nav{display:flex;align-items:center;gap:14px;padding:12px 20px;max-width:1100px;margin:auto;flex-wrap:wrap}
-.logo{font:800 1.5rem 'Playfair Display',serif;color:var(--g);text-decoration:none;margin-right:auto}
-.logo i{color:var(--r);font-style:normal}
-nav{display:flex;gap:4px;flex-wrap:wrap}
-nav a{padding:7px 13px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem}
-nav a.on{background:var(--g);color:var(--bg)}
-.gb{background:var(--r);color:#fff;border:0;border-radius:99px;padding:8px 16px;font-weight:700}
-.btn{display:inline-block;background:var(--g);color:var(--bg);border:0;border-radius:99px;padding:12px 24px;font-weight:700;text-decoration:none}
-.btn.r{background:var(--r);color:#fff}.btn.o{background:none;color:var(--g);box-shadow:inset 0 0 0 2px var(--g)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:48px 0}
-.hero p{color:var(--mut);max-width:46ch;font-size:1.1rem}
-.hero .art{background:var(--p);border-radius:200px 200px 24px 24px;padding:20px}
-@media(max-width:760px){.hero{grid-template-columns:1fr}}
-section{padding:36px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--ln);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.card .im{background:var(--p2)}.card .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.card small{color:var(--mut)}.pr{font-weight:800;color:var(--r);font-size:1.15rem}
-.card .add{margin-top:auto;background:var(--g2);color:var(--g);border:0;border-radius:99px;padding:9px;font-weight:700}
-.card .add.in{background:var(--g);color:var(--bg)}
-.sp{border-radius:22px;padding:26px 22px;min-height:170px;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;background:var(--g2)}
-.sp:nth-child(2){background:var(--p)}.sp:nth-child(3){background:var(--r);color:#fff}.sp:nth-child(4){background:var(--g);color:var(--bg)}
-.sp b{font:700 1.4rem 'Playfair Display',serif}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-.chip{border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:99px;padding:7px 15px;font-weight:600}
-.chip.on{background:var(--r);border-color:var(--r);color:#fff}
-.tag{display:inline-block;font-size:.78rem;background:var(--p2);color:var(--r);border-radius:99px;padding:2px 10px;font-weight:700;width:fit-content}
-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden}
-td,th{padding:12px 16px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}th{background:var(--g2);color:var(--g)}
-.q{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:26px;max-width:680px}
-.opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.bar{height:6px;background:var(--p);border-radius:9px;margin-bottom:18px}.bar i{display:block;height:100%;background:var(--r);border-radius:9px;transition:width .3s}
-.scroll{overflow-x:auto}
-#gp{position:fixed;right:16px;top:calc(64px + env(safe-area-inset-top,0px));width:min(320px,calc(100% - 32px));background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:18px;z-index:6;display:none;box-shadow:0 10px 30px rgba(0,0,0,.18)}
-#gp li{display:flex;justify-content:space-between;gap:8px;padding:4px 0}#gp ul{padding:0;list-style:none;margin:8px 0}
-footer{background:var(--g);color:var(--bg);padding:30px 0;margin-top:30px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.pg{display:block}.pg.on{display:block}
+:focus-visible{outline:3px solid var(--bord);outline-offset:3px}.hero :focus-visible,header.open :focus-visible{outline-color:#fff}
+.w{max-width:1480px;margin:0 auto;padding:0 40px}
+section{padding:28px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--g);color:var(--bg);border:0;border-radius:99px;padding:0 28px;font:600 .95rem var(--sans);text-decoration:none;transition:background .25s}
+.btn:hover{background:var(--g0)}
+.btn.r{background:var(--bord);color:#fff}.btn.r:hover{background:#62202D}
+.btn.o{background:none;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)}.btn.o:hover{background:var(--g);color:var(--bg)}
+.hero .btn.r{background:var(--bg);color:var(--g)}.hero .btn.r:hover{background:#fff}
+.btn.l{background:none;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85)}.btn.l:hover{background:rgba(255,255,255,.14)}
+/* header */
+header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:5;pointer-events:none;transition:background .3s,box-shadow .3s}
+header.dk{background:var(--paper);box-shadow:0 8px 30px rgba(23,64,44,.1)}
+.nav{pointer-events:auto;max-width:1480px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:16px}
+.logo{font:900 clamp(2.4rem,6vw,5.5rem)/1 'Playfair Display',Georgia,serif;letter-spacing:-.02em;color:var(--lr);text-decoration:none;margin-right:auto;transition:font-size .3s}
+.logo i{font-style:normal;color:var(--lg)}
+header.dk .logo{font-size:clamp(2rem,3.4vw,2.8rem)}
+nav{display:flex;gap:4px}
+nav a{padding:9px 18px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;color:#fff;transition:background .2s;white-space:nowrap}
+nav a:hover,nav a.on{background:rgba(255,255,255,.18)}
+header.dk nav a{color:var(--ink)}
+header.dk nav a:hover,header.dk nav a.on{background:rgba(23,64,44,.08)}
+.lg{display:flex;gap:2px;padding:3px;border-radius:99px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+.lg button{background:none;border:0;border-radius:99px;padding:5px 12px;font-weight:700;font-size:.82rem;color:#fff}
+.lg button.on{background:#fff;color:var(--g)}
+header.dk .lg{box-shadow:inset 0 0 0 1.5px var(--ln)}header.dk .lg button{color:var(--ink)}header.dk .lg button.on{background:var(--g);color:#fff}
+.gb{background:var(--lr);color:#fff;border:0;border-radius:99px;padding:0 20px;min-height:44px;font-weight:700}
 
-html,body{overflow-x:clip}
-h1,h2,h3{font-family:Manrope,system-ui,sans-serif;letter-spacing:-.02em}
-h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.03em}
-header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);background:none;border:0;padding:12px 12px 0;pointer-events:none}
-.nav{pointer-events:auto;max-width:1180px;margin:0 auto;padding:8px 8px 8px 22px;border-radius:99px;background:color-mix(in srgb,var(--card) 84%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 2px 20px rgba(0,0,0,.14)}
-.logo{font:600 1.7rem/1 'Playfair Display',serif;letter-spacing:.01em}
-.gb{padding:11px 20px}
-main.w{max-width:1180px}
-.hero{display:block;position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:min(100svh,860px);padding:0;background:#13261a;color:#fff;overflow:hidden}
-.hero img{position:absolute;right:0;top:0;width:64%;height:100%;object-fit:cover;object-position:50% 60%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 38%);mask-image:linear-gradient(90deg,transparent,#000 38%)}
-.hs{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,14,.55),rgba(10,20,14,0) 28%,rgba(10,20,14,.6) 100%)}
-.hc{position:relative;min-height:min(100svh,860px);display:flex;flex-direction:column;justify-content:flex-end;gap:28px;padding:120px max(20px,calc(50vw - 590px)) 48px}
-.hero h1{font-size:clamp(2.6rem,8vw,6.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;max-width:11ch;margin:0}
-.ha{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.hero .ha p{color:#fff;max-width:38ch;margin:0;font-size:1.05rem}
-.hero .ha p:first-child{display:flex;gap:10px;flex-wrap:wrap}
-.btn.l{background:none;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85)}
-.pg:not(#home){padding-top:96px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.split img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cover;border-radius:14px}
-.split p{max-width:46ch;color:var(--mut)}
-.card{border-radius:14px}.card .im img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-#gp{top:calc(78px + env(safe-area-inset-top,0px))}
-@media(max-width:760px){.nav{border-radius:24px;padding:10px 14px;gap:8px}nav a{padding:6px 10px;font-size:.88rem}.hero img{width:100%;opacity:.5;-webkit-mask-image:none;mask-image:none}.ha{flex-direction:column;align-items:flex-start}.split{grid-template-columns:1fr}.pg:not(#home){padding-top:130px}.hc{padding-top:150px}}
-footer{background:#13261a;color:#dfe8dd;margin-top:40px;padding:44px 0 24px;border:0}
-footer .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
-footer .fl{font:600 1.8rem/1 'Playfair Display',serif;color:#fff}
-footer h4{margin:0 0 10px;font:800 .78rem Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#9fc7ad}
-footer p{margin:8px 0 0;color:#dfe8dd}footer .fg h4+p{margin-top:0}
-footer a{color:#fff;text-decoration:none}footer a:hover{text-decoration:underline}
-footer .fb{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);font-size:.85rem;color:#9fb5a6}
-@media(max-width:760px){footer .fg{grid-template-columns:1fr 1fr}footer .fg>div:first-child{grid-column:1/-1}}
-
-.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;-webkit-mask-image:none;mask-image:none;opacity:1}
-.hs{background:linear-gradient(90deg,rgba(10,20,14,.72),rgba(10,20,14,.15) 65%),linear-gradient(180deg,rgba(10,20,14,.5),rgba(10,20,14,0) 28%,rgba(10,20,14,.55) 100%)}
-.ha{flex-direction:column;align-items:flex-start;gap:20px}.hero .ha p:last-child{order:-1;max-width:46ch}
-@media(prefers-reduced-motion:reduce){.hero video{display:none}}
-.pg:not(#home){padding-top:0}
-.pg:not(#home)>section:first-child>h2:first-child{width:100vw;margin:0 0 32px calc(50% - 50vw);padding:150px max(20px,calc(50vw - 590px)) 44px;background:#13261a;color:#fff;font-size:clamp(2.4rem,7vw,5rem);font-weight:800;letter-spacing:-.04em;line-height:1}
-.pg:not(#home)>section:first-child{padding-top:0}
-@media(max-width:760px){.pg:not(#home){padding-top:0}.pg:not(#home)>section:first-child>h2:first-child{padding-top:140px}}
-
-/* v3: фото-секція «Обирайте за простором» з мінімальним проміжком */
-.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.sp-grid .sp{position:relative;display:block;min-height:0;padding:0;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#13261a;color:#fff}
-.sp-grid .sp:nth-child(n){background:#13261a;color:#fff}
-.sp-grid .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.sp-grid .sp:hover img{transform:scale(1.03)}
-.sp-grid .sp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,14,0) 45%,rgba(10,20,14,.72))}
-.sp-grid .sp span.t{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:18px 20px;display:flex;flex-direction:column;gap:2px}
-.sp-grid .sp b{font:800 1.3rem Manrope,sans-serif;letter-spacing:-.02em}
-.sp-grid .sp small{opacity:.9}
-@media(max-width:560px){.sp-grid{grid-template-columns:1fr}}
-/* v4: усі 4 фото в один рядок на всю ширину сайту, майже непомітний проміжок */
-#spaces.sp-grid{grid-template-columns:repeat(4,1fr);gap:2px;width:100vw;margin-left:calc(50% - 50vw)}
-#spaces.sp-grid .sp{aspect-ratio:3/4;border-radius:0}
-#spaces.sp-grid .sp span.t{padding:14px 16px}
-@media(max-width:560px){#spaces.sp-grid{grid-template-columns:repeat(4,1fr);gap:2px}
-#spaces.sp-grid .sp{aspect-ratio:1/3}
-#spaces.sp-grid .sp span.t{padding:8px 6px}
-#spaces.sp-grid .sp small{display:none}
-#home #spaces.sp-grid .sp b{font-size:.62rem;line-height:1.15;overflow-wrap:anywhere}}
-
-/* v9: єдиний вигляд до самого низу: фото на всю ширину, світліші заголовки */
-.hero h1{font-size:clamp(2.6rem,8vw,6.4rem)}
-#feat,#cg{grid-template-columns:repeat(5,1fr);gap:6px;width:100vw;margin-left:calc(50% - 50vw)}
-#feat .card,#cg .card{border-radius:0;border:0}
-#feat .card .b,#cg .card .b{padding:16px 18px 20px}
-.split{width:100vw;margin-left:calc(50% - 50vw);gap:0;align-items:stretch;padding:0;margin-top:36px}
-.split img{aspect-ratio:auto;max-height:none;height:100%;min-height:560px;border-radius:0}
-.split>div{background:var(--g2);display:flex;flex-direction:column;justify-content:center;padding:48px max(24px,calc(50vw - 590px)) 48px 56px}
-.split h2{color:var(--g)}
-.pg:not(#home)>section:first-child>h2:first-child{background:var(--g2);color:var(--g);padding:120px max(20px,calc(50vw - 570px)) 36px;margin-bottom:28px;font-size:clamp(2rem,5vw,3.6rem)}
-footer{background:var(--g);color:#eaf2ea}
-footer .fb{color:#cfe0d3}
-footer h4{color:#bfe0c9}
-@media(max-width:1100px){#feat,#cg{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){#feat,#cg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.split>div{padding:32px 20px}.split img{min-height:360px}.pg:not(#home)>section:first-child>h2:first-child{padding-top:130px}}
-
-/* v10: меню без білої смуги, менший заголовок, більший підзаголовок */
-.nav{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
-header nav a:not(.on){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55)}
-header .logo{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55)}
-header.dk nav a:not(.on){color:var(--ink);text-shadow:0 0 10px rgba(255,255,255,.9)}
-header.dk .logo{color:var(--g);text-shadow:0 0 10px rgba(255,255,255,.9)}
-.hero h1{font-size:clamp(1.76rem,5.44vw,4.35rem)}
-.hero .ha p{font-size:1.05rem}
-header .logo{font-size:2.6rem;font-weight:700;letter-spacing:.02em}
-@media(max-width:760px){header .logo{font-size:2.1rem}}
-
-/* v11: scroll-анімація hero (за шаблоном) */
+.bg{display:none;width:44px;height:44px;border:0;background:none;color:#fff;position:relative}
+.bg span,.bg span::before{content:"";position:absolute;left:11px;width:22px;height:2px;background:currentColor;transition:transform .25s}
+.bg span{top:21px}.bg span::before{left:0;top:-7px}
+header.dk .bg{color:var(--ink)}
+header.open .bg span{transform:rotate(45deg)}header.open .bg span::before{transform:translateY(7px) rotate(-90deg)}
+/* hero */
 #scroll-container{position:relative;height:calc(var(--vh,100vh)*2)}
-#scroll-container .hero{position:sticky;top:0;height:var(--vh,100vh);min-height:0;margin-left:calc(50% - 50vw);width:100vw}
-#scroll-container .hc{min-height:0;height:100%;will-change:transform,opacity}
-#hero-overlay{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px;opacity:0;pointer-events:none;will-change:opacity,transform}
-.hero-overlay-label{font-family:Manrope,system-ui,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.7);margin:0 0 20px}
-.hero-overlay-title{font-family:Manrope,system-ui,sans-serif;font-size:clamp(1.92rem,4.8vw,4.16rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.45)}
-@media(max-width:760px){#hero-overlay{padding:24px}.hero-overlay-title{font-size:clamp(1.6rem,7.2vw,2.56rem)}.hero-overlay-label{margin-bottom:12px}}
-@media(prefers-reduced-motion:reduce){#scroll-container{height:auto}#scroll-container .hero{position:relative}#hero-overlay{display:none}}
-
-/* v12: менші відступи між секціями (удвічі) */
-.pg:not(#home){margin-top:-22px}
-.pg:not(#home)>section:first-child>h2:first-child{padding-top:80px;padding-bottom:20px;margin-bottom:16px}
-@media(max-width:760px){.pg:not(#home)>section:first-child>h2:first-child{padding-top:124px;padding-bottom:20px}}
-
-/* v13: hover-ефект карток каталогу */
-#cg .card{position:relative;transition:transform .3s ease,box-shadow .3s ease}
-#cg .card .im{overflow:hidden}
-#cg .card .im img,#cg .card .im svg{display:block;transition:transform .3s ease}
-@media(hover:hover){
-#cg .card:hover{transform:scale(1.04);box-shadow:0 16px 36px rgba(0,0,0,.24);z-index:2}
-#cg .card:hover .im img,#cg .card:hover .im svg{transform:scale(1.08)}
-}
-@media(prefers-reduced-motion:reduce){#cg .card,#cg .card .im img,#cg .card .im svg{transition:none}#cg .card:hover,#cg .card:hover .im img,#cg .card:hover .im svg{transform:none}}
-
-
-/* v15: компактна шапка на телефоні */
-@media(max-width:760px){
-header{padding:8px 8px 0}
-.nav{gap:4px 8px;padding:6px 12px;border-radius:18px}
-header .logo{font-size:1.6rem;order:1}
-.nav .gb{order:2;padding:6px 12px;font-size:.85rem}
-.nav nav{order:3;flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:2px}
-.nav nav::-webkit-scrollbar{display:none}
-nav a{white-space:nowrap;padding:5px 10px;font-size:.84rem}
-header.dk .nav{background:rgba(240,236,229,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-}
-
-/* v16: перемикач мови, візуальні нижні блоки */
-header .lg{display:flex;gap:2px;padding:3px;border-radius:99px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
-header.dk .lg{box-shadow:inset 0 0 0 1.5px var(--ln)}
-.lg button{background:none;border:0;border-radius:99px;padding:5px 11px;font-weight:700;font-size:.82rem;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55)}
-header.dk .lg button{color:var(--ink);text-shadow:none}
-.lg button.on,header.dk .lg button.on{background:var(--g);color:#fff;text-shadow:none}
-#arts,.two{display:grid;gap:6px;width:100vw;margin-left:calc(50% - 50vw)}
-#arts{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr 1fr}
-#arts{counter-reset:a}
-#arts .card{counter-increment:a;border:0;border-radius:0;min-height:300px;color:var(--ink)}
-#arts .card::before{content:"0" counter(a);font:800 3.4rem/1 Manrope,sans-serif;letter-spacing:-.04em;padding:26px 24px 0;opacity:.35;margin-bottom:auto}
-#arts .card .b{flex:0;padding:20px 24px 28px}#arts .card h3{font-size:1.3rem;font-weight:800}#arts .card p{margin:0}
-#arts .card:nth-child(1){background:var(--g2)}#arts .card:nth-child(2){background:var(--p)}#arts .card:nth-child(3){background:var(--g);color:#eaf2ea}#arts .card:nth-child(4){background:var(--r);color:#fff}
-#guide>section+section{padding-top:6px}
-.two .card{border:0;border-radius:0}.two .card .b{padding:36px 28px}.two .card h3{font-size:1.5rem;font-weight:800}
-.two .card:nth-child(1){background:var(--g);color:#eaf2ea}.two .card:nth-child(2){background:var(--p)}
-#finder .q{max-width:none;width:100vw;margin-left:calc(50% - 50vw);border:0;border-radius:0;background:var(--g2);padding:48px max(20px,calc(50vw - 570px)) 56px}
-#fq .st{font:800 .78rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--r)}
-#fq h3{font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin:10px 0 0}
-#fq .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:26px}
-#fq .opts .chip{padding:22px 20px;border-radius:14px;font-size:1.05rem;text-align:left;transition:background .2s,color .2s}
-#fq .opts .chip:hover{background:var(--g);color:#fff;border-color:var(--g)}
-#fq .bar{height:8px;background:#fff;margin-bottom:22px}#fq .grid{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){#arts{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
-@media(max-width:760px){.nav .lg{order:2}#fq .grid{grid-template-columns:1fr 1fr}#arts .card{min-height:200px}}
-/* v20: кошик і оформлення замовлення */
-.gh{font:700 1.15rem/1.15 Manrope,system-ui,sans-serif;letter-spacing:-.02em;margin:0 0 .5em}
-#gp{max-height:calc(100vh - 110px);overflow-y:auto}
-#gp li{align-items:center}#gp li>span:first-child{flex:1;min-width:0}#gp .lp{white-space:nowrap;min-width:4.5em;text-align:right}
+.hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);background:var(--g0);color:#fff;overflow:hidden}
+#scroll-container .hero{position:sticky;top:0;height:var(--vh,100vh)}
+.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hs{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,42,29,.68),rgba(15,42,29,.08) 65%),linear-gradient(180deg,rgba(15,42,29,.5),transparent 28%,rgba(15,42,29,.5))}
+.hc{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:120px max(40px,calc(50vw - 700px)) 72px;will-change:transform,opacity}
+.hero h1{font-size:clamp(2.75rem,6.4vw,5.25rem);line-height:1.02;max-width:18ch;text-wrap:balance;margin:0;color:#fff}
+.ha{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.hero .ha p{margin:0;color:#fff;max-width:46ch;font-size:1.125rem}
+.hero .ha p:first-child{display:flex;gap:12px;flex-wrap:wrap}.hero .ha p:last-child{order:-1}
+#hero-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px;opacity:0;pointer-events:none;will-change:opacity,transform}
+.hero-overlay-label{font:500 clamp(2.25rem,5vw,4rem)/1.05 var(--serif);color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+@media(prefers-reduced-motion:reduce){#scroll-container{height:auto}#scroll-container .hero{position:relative;height:auto;min-height:90svh}.hero video,#hero-overlay{display:none}}
+/* page titles */
+.pg:not(#home)>section:first-child{padding-top:0}
+.pg:not(#home)>section:first-child>h2:first-child{background:var(--sand);box-shadow:0 0 0 100vmax var(--sand);clip-path:inset(0 -100vmax);padding:75px 0 28px;margin:0 0 28px}
+.pg:not(#home){margin-top:28px}
+.sub{font:600 clamp(1.5rem,2.4vw,2rem)/1.2 var(--serif);margin:-8px 0 32px}
+.more{margin:28px 0 0;text-align:center}
+/* product grid + cards */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 28px}
+.card{display:flex;flex-direction:column}
+.card .im{aspect-ratio:4/5;overflow:hidden;background:var(--sand)}
+.card .im img,.card .im svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+@media(hover:hover){.card:hover .im img,.card:hover .im svg{transform:scale(1.04)}}
+.card .b{display:grid;grid-template-columns:1fr auto;column-gap:12px;row-gap:6px;padding:18px 0 0;flex:1;align-content:start;grid-template-rows:auto auto 1fr auto}
+.card .b>*{grid-column:1/-1;margin:0}
+.tag{display:none}
+.card h3{font-size:1.375rem;line-height:1.15}
+.card small{color:var(--mut);font-size:.875rem;font-weight:500;line-height:1.45}
+.card small+small{font-weight:400;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
+.card .pr{grid-column:1;align-self:center;font:700 1.0625rem var(--sans);color:var(--bord);margin-top:10px}
+.card .add{grid-column:2;margin-top:10px;min-height:40px;padding:0 18px;border-radius:99px;border:0;background:none;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g);font:600 .9rem var(--sans);transition:background .2s,color .2s}
+.card .add:hover,.card .add.in{background:var(--g);color:#fff}
+/* catalog filters */
+#q{display:block;width:100%;max-width:380px;min-height:48px;margin:0 0 32px;padding:0 22px;border:1px solid var(--ln);border-radius:99px;background:var(--paper);font:400 1rem var(--sans);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+#cc{gap:32px;border-bottom:1px solid var(--ln)}
+#cc .chip{background:none;border:0;border-bottom:2px solid transparent;border-radius:0;padding:10px 0;margin-bottom:-1px;font:600 1rem var(--sans);color:var(--mut)}
+#cc .chip:hover{color:var(--g)}#cc .chip.on{color:var(--g);border-color:var(--bord)}
+#cs .chip{border:1px solid var(--ln);background:none;border-radius:99px;padding:6px 16px;font:500 .9rem var(--sans);color:var(--ink)}
+#cs .chip.on{background:var(--sage);border-color:var(--g);color:var(--g)}
+#cn{margin:0 0 40px;font-size:.9rem}
+/* home: categories + spaces */
+.catgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.cat{display:block;text-align:center;text-decoration:none}
+.cat .arch{display:block;aspect-ratio:3/4;overflow:hidden;background:var(--sand)}
+.cat img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.cat:hover img{transform:scale(1.05)}
+.cat b{display:block;margin-top:20px;font:500 1.75rem/1.1 var(--serif)}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.sp{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;color:#fff;text-decoration:none;background:var(--g0)}
+.sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.sp:hover img{transform:scale(1.04)}
+.sp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,42,29,.8))}
+.sp .t{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px;display:flex;flex-direction:column;gap:4px}
+.sp b{font:500 1.7rem/1.1 var(--serif)}.sp small{font-size:.9rem}
+/* finder */
+#finder .q{max-width:none;background:var(--paper);border:1px solid var(--ln);border-radius:20px;padding:64px}
+#fq .st{font:600 .9rem var(--sans);color:var(--bord)}
+#fq h3{font:500 clamp(2rem,3.6vw,3rem)/1.1 var(--serif);margin:12px 0 0}
+.bar{height:6px;background:var(--sage);border-radius:9px;margin-bottom:28px}.bar i{display:block;height:100%;background:var(--g);border-radius:9px;transition:width .3s}
+#fq .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
+#fq .chip{border:1px solid var(--ln);background:var(--bg);border-radius:14px;padding:22px 20px;font:500 1.05rem var(--sans);text-align:left;color:var(--ink);transition:background .2s,color .2s}
+#fq .chip:hover{background:var(--g);color:#fff;border-color:var(--g)}
+#fq .grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin:32px 0}
+/* guide + reviews */
+#arts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+#arts .card,.two .card{background:var(--paper);border:1px solid var(--ln);border-radius:12px}
+#arts .card .b,.two .card .b{display:flex;flex-direction:column;gap:12px;padding:32px}
+#arts .card h3,.two .card h3{font-size:1.6rem}#arts .card p,.two .card p{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.two .card:first-child{background:var(--g);border-color:var(--g);color:#EAF2EA}
+#guide>section+section,#reviews>section+section{padding-top:28px}
+#rv{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.rv{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--paper);border:1px solid var(--ln);border-radius:12px}
+.rv .stars{color:var(--bord);letter-spacing:.12em}
+.rv p{margin:0}.rv .who{margin-top:auto;display:flex;flex-direction:column;font-size:.9rem}.rv .who small{color:var(--mut)}
+/* cart + checkout */
+#gp{position:fixed;right:24px;top:calc(84px + env(safe-area-inset-top,0px));width:min(360px,calc(100% - 32px));max-height:calc(100vh - 110px);overflow-y:auto;background:var(--paper);border:1px solid var(--ln);border-radius:16px;padding:22px;z-index:6;display:none;box-shadow:0 16px 40px rgba(23,64,44,.16)}
+.gh{font:600 1.5rem var(--serif);margin:0 0 .5em}
+#gp ul{padding:0;list-style:none;margin:8px 0}#gp li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0}
+#gp li>span:first-child{flex:1;min-width:0}#gp .lp{white-space:nowrap;min-width:4.5em;text-align:right}
+#gco{width:100%;margin-top:14px}#gco[hidden],#co[hidden],#co [hidden]{display:none!important}
 .qt{display:inline-flex;align-items:center;gap:6px}
-.qt button{width:24px;height:24px;border-radius:50%;border:0;background:var(--g2);color:var(--g);font:700 1rem/1 Manrope,sans-serif;cursor:pointer;padding:0 0 2px}
-.qt button:hover{background:var(--g);color:#fff}.qt b{min-width:1.2em;text-align:center}
-#gco{width:100%;margin-top:12px;cursor:pointer}
-#gco[hidden],#co[hidden],#co [hidden]{display:none!important}
+.qt button{width:26px;height:26px;border-radius:50%;border:0;background:var(--sage);color:var(--g);font:700 1rem/1 var(--sans);padding:0 0 2px}.qt button:hover{background:var(--g);color:#fff}.qt b{min-width:1.2em;text-align:center}
 #co{position:fixed;inset:0;z-index:20;display:flex;overflow-y:auto;padding:24px 16px}
-.co-bd{position:fixed;inset:0;background:rgba(10,20,14,.62)}
-.co-box{position:relative;background:var(--card);border-radius:18px;width:min(920px,100%);margin:auto;padding:34px 34px 30px}
-.co-x{position:absolute;top:12px;right:14px;width:40px;height:40px;border:0;border-radius:50%;background:var(--g2);color:var(--g);font:700 1.5rem/1 Manrope,sans-serif;cursor:pointer;padding:0 0 3px}
-.co-x:hover{background:var(--g);color:#fff}
-.co-box h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.03em;margin:0 40px 0 0}
-.co-box h4{font:800 .78rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--r);margin:0 0 14px}
-.co-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:22px;align-items:start}
+.co-bd{position:fixed;inset:0;background:rgba(15,42,29,.62)}
+.co-box{position:relative;background:var(--paper);border-radius:18px;width:min(920px,100%);margin:auto;padding:40px}
+.co-x{position:absolute;top:14px;right:16px;width:44px;height:44px;border:0;border-radius:50%;background:var(--sage);color:var(--g);font:700 1.5rem/1 var(--sans);padding:0 0 3px}.co-x:hover{background:var(--g);color:#fff}
+.co-box h3{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 48px 0 0}
+.co-box h4{font:600 .95rem var(--sans);color:var(--bord);margin:0 0 14px}
+.co-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-top:24px;align-items:start}
 #cof label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem;margin-bottom:14px}
-#cof input[type=text],#cof input[type=tel],#cof textarea{font:400 1rem Manrope,system-ui,sans-serif;padding:12px 14px;border:1px solid var(--ln);border-radius:10px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box;resize:vertical}
-#cof input:user-invalid{border-color:var(--r)}
-#cof h4:nth-of-type(2){margin-top:10px}
-.co-pay{display:flex;flex-direction:column;gap:2px}
-#cof .co-pay label{flex-direction:row;align-items:center;gap:10px;font-weight:500;margin-bottom:8px}
+#cof input[type=text],#cof input[type=tel],#cof textarea{font:400 1rem var(--sans);padding:13px 16px;border:1px solid var(--ln);border-radius:10px;background:#fff;color:var(--ink);width:100%;resize:vertical}
+#cof input:user-invalid{border-color:var(--bord)}#cof h4:nth-of-type(2){margin-top:10px}
+.co-pay{display:flex;flex-direction:column}#cof .co-pay label{flex-direction:row;align-items:center;gap:10px;font-weight:500;margin-bottom:8px}
 #cof .co-pay input{accent-color:var(--g);width:18px;height:18px;margin:0}
-.co-sum{background:var(--g2);border-radius:14px;padding:22px}
-.co-sum ul{list-style:none;margin:0;padding:0}
-.co-sum li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(24,36,28,.1)}
+.co-sum{background:var(--sand);border-radius:14px;padding:24px}
+.co-sum ul{list-style:none;margin:0;padding:0}.co-sum li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(31,42,35,.12)}
 .co-sum li em{font-style:normal;color:var(--mut)}.co-sum li b{white-space:nowrap}
-.cot{display:flex;justify-content:space-between;font-weight:800;font-size:1.2rem;padding:14px 0 8px}.cot b{color:var(--r)}
+.cot{display:flex;justify-content:space-between;font-weight:800;font-size:1.2rem;padding:14px 0 8px}.cot b{color:var(--bord)}
 .co-note{font-size:.85rem;color:var(--mut);margin:8px 0 14px}
-.co-sum .btn{width:100%;border:0;cursor:pointer;font:700 1rem Manrope,sans-serif;margin-bottom:0}
-#co-ok{padding:10px 0 6px;max-width:520px}.coN{margin:8px 0}.coN b{color:var(--g)}#co-more{border:0;cursor:pointer;margin-top:12px;font:700 1rem Manrope,sans-serif}
-@media(max-width:760px){.co-box{padding:26px 18px 22px}.co-grid{grid-template-columns:1fr;gap:18px}#gp{max-height:calc(100vh - 130px)}}
-/* v20: відгуки — 6 компактних карток в рядок */
-.rvw{width:100%;margin:0}
-#rv{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;width:100%}
-.rv{padding:16px 14px;min-height:0;display:flex;flex-direction:column;gap:8px;background:var(--card);color:var(--ink)}
-.rv .stars{color:var(--r);letter-spacing:.12em;font-size:.85rem;line-height:1}
-.rv p{margin:0;font-size:.82rem;line-height:1.45}
-.rv .who{margin-top:auto;display:flex;flex-direction:column;font-size:.78rem}
-.rv .who b{font-weight:800}.rv .who small{opacity:.75}
-.rv:nth-child(6n+1){background:var(--g);color:#eaf2ea}.rv:nth-child(6n+1) .stars{color:#f1d3da}
-.rv:nth-child(6n+2){background:var(--p)}.rv:nth-child(6n+3){background:var(--g2)}
-.rv:nth-child(6n+4){background:var(--r);color:#fff}.rv:nth-child(6n+4) .stars{color:#fff}
-.rv:nth-child(6n+5){background:var(--g2)}.rv:nth-child(6n+6){background:var(--p)}
-@media(max-width:1100px){#rv{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:620px){#rv{grid-template-columns:repeat(2,1fr)}}
-#reviews>section+section{padding-top:6px}
+.co-sum .btn{width:100%;border:0}
+#co-ok{padding:10px 0 6px;max-width:520px}.coN{margin:8px 0}.coN b{color:var(--g)}#co-more{border:0;margin-top:12px}
+/* footer */
+footer{background:var(--g);color:#EAF2EA;margin-top:56px;padding:72px 0 32px}
+footer .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+footer .fl{font:800 2.2rem/1 'Playfair Display',serif;color:#fff}
+footer h4{margin:0 0 12px;font:600 .95rem var(--sans);color:#BFE0C9}
+footer p{margin:8px 0 0}footer .fg h4+p{margin-top:0}footer a{color:#fff;text-decoration:none}footer a:hover{text-decoration:underline}
+footer .fb{margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:.85rem;color:#CFE0D3}
+/* responsive */
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr);gap:24px 20px}#arts{grid-template-columns:1fr 1fr}#rv{grid-template-columns:1fr 1fr}.nav{padding:12px 24px}.w{padding:0 24px}.hc{padding-inline:24px}}
+@media(max-width:900px){.sp-grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.co-grid{grid-template-columns:1fr}footer .fg{grid-template-columns:1fr 1fr}footer .fg>div:first-child{grid-column:1/-1}}
+@media(max-width:760px){
+section{padding-top:32px}.pg:not(#home){margin-top:32px}footer{margin-top:32px;padding-top:48px}
+.w{padding:0 20px}.hc{padding:120px 20px 48px}.nav{padding:10px 16px;gap:8px}
+.bg{display:block;order:4}.lg{order:2}.gb{order:3;padding:0 14px;font-size:.88rem}
+nav{display:none}header.open nav{display:flex;position:fixed;inset:0;z-index:-1;background:var(--g0);flex-direction:column;justify-content:center;align-items:flex-start;padding:0 32px;gap:6px}
+header.open nav a{font:500 2.25rem/1.2 var(--serif);padding:8px 0;color:#fff}header.open nav a.on{background:none;color:#E39AA8}
+header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb,header.open .lg{visibility:hidden}
+.hero .ha p:first-child .btn{width:100%}.hero .ha p:first-child{width:100%;flex-direction:column}
+.pg:not(#home)>section:first-child>h2:first-child{padding:130px 0 24px;margin-bottom:18px}
+.grid{grid-template-columns:1fr 1fr;gap:18px 14px}.card h3{font-size:1.15rem}.card small+small{display:none}
+.card .b{padding-top:14px}.card .pr{grid-column:1/-1;margin-top:6px}.card .add{grid-column:1/-1;width:100%;margin-top:8px}
+.catgrid{grid-template-columns:1fr 1fr;gap:20px 14px}.cat b{font-size:1.4rem;margin-top:14px}
+.sp-grid{gap:14px}.sp .t{padding:14px}.sp b{font-size:1.3rem}.sp small{display:none}
+#cc{gap:22px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}#cc .chip{white-space:nowrap}
+#cs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}#cs .chip{white-space:nowrap}
+#q{max-width:none}
+#finder .q{padding:32px 20px}#fq .grid{grid-template-columns:1fr 1fr;gap:36px 14px}
+#arts,#rv{grid-template-columns:1fr;gap:16px}.two{gap:16px}
+#gp{top:auto;bottom:0;left:0;right:0;width:auto;border-radius:18px 18px 0 0;max-height:70vh}
+#co{padding:0}.co-box{border-radius:0;min-height:100%;padding:28px 20px}
+}
+/* Поява блоків при прокручуванні */
+.rvl [data-rv]{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rvl [data-rv].in{opacity:1;transform:none}
+/* Кроки */
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;--p:0}
+.steps::before,.steps::after{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:var(--ln)}
+.steps::after{background:var(--bord);transform-origin:left;transform:scaleX(var(--p))}
+.stp{position:relative;z-index:1}
+.sn{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--ln);font:600 1.15rem var(--serif);color:var(--g);transition:background .5s,border-color .5s,color .5s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.stp.on .sn{background:var(--g);border-color:var(--g);color:var(--bg);transform:scale(1.08)}
+.stp h3{font:600 1.6rem/1.2 var(--serif);color:var(--g);margin:20px 0 8px}
+.stp p{margin:0;color:var(--mut)}
+/* Акордеон */
+.acc{margin-top:32px;border-top:1px solid var(--ln);max-width:880px}
+.ai{border-bottom:1px solid var(--ln)}
+.ai h3{margin:0;font:inherit}
+.ai button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 4px;cursor:pointer;font:600 clamp(1.25rem,2vw,1.5rem)/1.3 var(--serif);color:var(--g);transition:color .25s,padding .35s}
+.ai button:hover{color:var(--bord);padding-left:12px}
+.ai button:focus-visible{outline:2px solid var(--g);outline-offset:2px;border-radius:4px}
+.pm{flex:none;position:relative;width:36px;height:36px;border-radius:50%;border:1.5px solid currentColor;transition:transform .45s cubic-bezier(.3,1.4,.5,1),background .3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .45s}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.ai.op .pm{transform:rotate(180deg);background:var(--g);color:var(--bg)}
+.ai.op .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.ai.op button{color:var(--g)}
+.ap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1)}
+.ap>div{overflow:hidden}
+.ap p{margin:0;padding:0 56px 24px 4px;color:var(--mut);opacity:0;transform:translateY(-8px);transition:opacity .4s,transform .4s}
+.ai.op .ap{grid-template-rows:1fr}
+.ai.op .ap p{opacity:1;transform:none;transition-delay:.12s}
+/* Фінал */
+.fin{margin-top:72px;padding:0 0 32px;background:var(--g0);position:relative;overflow:hidden;color:var(--bg)}
+.fin .fg,.fin .fb{position:relative}.fin .fg{padding-top:64px;border-top:1px solid rgba(255,255,255,.14);max-width:1200px}.fin .btn:hover{text-decoration:none}
+.fin::before{content:"";position:absolute;inset:-40% -20%;background:radial-gradient(closest-side,rgba(123,42,58,.55),transparent 70%) 20% 30%/60% 60% no-repeat,radial-gradient(closest-side,rgba(29,91,58,.7),transparent 70%) 80% 70%/60% 60% no-repeat;animation:glow 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes glow{to{transform:translate3d(6%,-4%,0) rotate(8deg)}}
+ .fin-in{position:relative;padding:112px 20px 48px;text-align:center;max-width:860px;margin:0 auto}
+.fin-k{margin:0 0 20px;font:600 .8rem var(--sans);letter-spacing:.4em;color:rgba(245,241,233,.6)}
+.fin-h{color:var(--bg);font-size:clamp(2.4rem,6vw,4.75rem);line-height:1.05;margin:0}
+.fin-h .w8{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);filter:blur(6px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s;transition-delay:calc(var(--i)*90ms)}
+.fin.in .fin-h .w8{opacity:1;transform:none;filter:none}
+.fin-p{max-width:560px;margin:28px auto 0;color:rgba(245,241,233,.8);font-size:1.05rem}
+.fin-b{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:0}
+.fin-p,.fin-b,.fin-k{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.fin.in .fin-k{opacity:1;transform:none}
+.fin.in .fin-p{opacity:1;transform:none;transition-delay:.7s}
+.fin.in .fin-b{opacity:1;transform:none;transition-delay:.9s}
+.fin+*{margin-top:0}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:36px 24px}.steps::before,.steps::after{display:none}}
+@media(max-width:600px){.steps{grid-template-columns:1fr;gap:28px;padding-left:76px}.steps::before,.steps::after{display:block;left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}.steps::after{transform-origin:top;transform:scaleY(var(--p))}.sn{position:absolute;left:-76px;top:0}.stp h3{margin-top:10px}.fin-in{padding:72px 20px 32px}.ap p{padding-right:8px}}
+@media(prefers-reduced-motion:reduce){.rvl [data-rv],.fin-h .w8,.fin-p,.fin-b,.fin-k{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.fin::before{animation:none}.ap,.ap p,.pm,.pm::after{transition:none}}
 </style>
 <!-- GA4: вставити тег тут -->
 <!-- Meta Pixel: вставити тут -->
 </head><body>
 <header><div class="nav"><a class="logo" href="#home">VERD<i>E</i></a>
-<nav><a href="#home" data-p="home">Головна</a><a href="#catalog" data-p="catalog">Каталог</a><a href="#finder" data-p="finder">Підбір рослин</a><a href="#guide" data-p="guide">Гід і доставка</a><a href="#reviews" data-p="reviews">Відгуки</a></nav>
+<nav><a href="#home" data-p="home">Головна</a><a href="#finder" data-p="finder">Підбір рослин</a><a href="#catalog" data-p="catalog">Каталог</a><a href="#guide" data-p="guide">Гід і доставка</a><a href="#reviews" data-p="reviews">Відгуки</a></nav>
 <div class="lg" role="group" aria-label="Мова / Language"><button data-l="uk" class="on" aria-pressed="true">UA</button><button data-l="en" aria-pressed="false">EN</button></div>
-<button class="gb" id="gbtn">Мій сад: <span id="gc">0</span></button></div></header>
+<button class="gb" id="gbtn">Мій сад: <span id="gc">0</span></button><button class="bg" id="bg" type="button" aria-label="Меню" aria-expanded="false"><span></span></button></div></header>
 <div id="gp"><p class="gh">Мій сад</p><ul id="gl"></ul><div id="gt"></div><button class="btn r" id="gco" type="button" hidden>Оформити замовлення</button></div>
 <main class="w">
 <noscript><p style="padding:96px 20px 20px;max-width:640px">Для роботи каталогу, підбору рослин і кошика потрібен увімкнений JavaScript.</p></noscript>
 <div class="pg" id="home">
-<div id="scroll-container"><div class="hero" id="hero"><img src="assets/img-d1d0ddaa.webp" alt="Затишний будинок у саду з гортензіями" width="1000" height="559" fetchpriority="high" decoding="async"><video id="bg-video" muted loop playsinline preload="none" aria-hidden="true" poster="assets/img-d1d0ddaa.webp" data-src="assets/hero-video-1ece85d9.mp4"></video><div class="hs"></div><div class="hc"><h1>Зробіть місце, де хочеться бути</h1><div class="ha"><p><a class="btn r" href="#finder">Підібрати рослини</a><a class="btn l" href="#catalog">Дивитись каталог</a></p><p>Хвойні, троянди, півонії, кущі та дерева з українських розплідників. Підберемо рослини під сонце, ґрунт і ваш час на догляд.</p></div></div><div id="heroart" hidden></div><div id="hero-overlay"><p class="hero-overlay-label">Від ідеї до саду</p></div></div></div>
-<section><h2>Обирайте за простором</h2><div class="grid" id="spaces"></div></section>
+<div id="scroll-container"><div class="hero" id="hero"><img src="assets/img-d1d0ddaa.webp" alt="Затишний будинок у саду з гортензіями" width="1000" height="559" fetchpriority="high" decoding="async"><video id="bg-video" muted loop playsinline preload="none" aria-hidden="true" poster="assets/img-d1d0ddaa.webp" data-src="assets/hero-video-1ece85d9.mp4"></video><div class="hs"></div><div class="hc"><h1>Створимо сад, де захочеться бути</h1><div class="ha"><p><a class="btn r" href="#finder">Підібрати рослини</a><a class="btn l" href="#catalog">Дивитись каталог</a></p><p>Продаємо рослини, які перетворять вашу ділянку на сад мрії</p></div></div><div id="heroart" hidden></div><div id="hero-overlay"></div></div></div>
+<section><h2>Підбір рослин для вашого простору</h2><p class="sub">Де ви садитимете?</p><div class="grid" id="spaces"></div></section>
+<section class="hw" aria-labelledby="hw-t"><h2 id="hw-t">Як це працює</h2><p class="sub">Від ідеї до саду — чотири кроки</p>
+<ol class="steps" id="steps"><li class="stp"><span class="sn" aria-hidden="true">01</span><h3>Підбір</h3><p>Відповідаєте на кілька питань про ділянку, світло й ґрунт — ми пропонуємо рослини, що приживуться.</p></li><li class="stp"><span class="sn" aria-hidden="true">02</span><h3>Замовлення</h3><p>Додаєте рослини в «Мій сад» і оформлюєте замовлення за хвилину.</p></li><li class="stp"><span class="sn" aria-hidden="true">03</span><h3>Пакування</h3><p>Пакуємо в захисні короби із закритим кореневим комом, щоб рослина не відчула дороги.</p></li><li class="stp"><span class="sn" aria-hidden="true">04</span><h3>Посадка</h3><p>Отримуєте за 2–4 дні з інструкцією з посадки та догляду.</p></li></ol></section>
 </div>
-<div class="pg" id="catalog"><section><h2>Каталог рослин</h2><div class="chips" id="cc"></div><div class="chips" id="cs"></div><p id="cn" style="color:var(--mut)"></p><div class="grid" id="cg"></div></section></div>
 <div class="pg" id="finder"><section><h2>Підбір рослин для вашого простору</h2><div class="q" id="fq"></div></section></div>
+<div class="pg" id="catalog"><section><h2>Каталог рослин</h2><input type="search" id="q" placeholder="Пошук рослини" aria-label="Пошук рослини"><div class="chips" id="cc"></div><div class="chips" id="cs"></div><p id="cn" style="color:var(--mut)"></p><div class="grid" id="cg"></div></section></div>
 <div class="pg" id="guide"><section><h2>Гід садівника</h2><div class="grid" id="arts"></div></section></div>
-<div class="pg" id="reviews"><section><h2>Відгуки покупців</h2><div class="rvw"><div id="rv"><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Вперше замовляла дерево онлайн і хвилювалась. Магнолія приїхала на третій день, у щільній коробці, з закритим кореневим комом. Навесні вона вкрилась рожево-білими квітами.</p><div class="who"><b>Ірина</b><small>Київ · Магнолія «Сузан»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Взяв двадцять туй на живу огорожу. Усі однакові, рівні й без жовтизни. Прижилися всі до одної.</p><div class="who"><b>Андрій</b><small>Львів · Туя «Смарагд»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Півонія вже наступного літа дала великі рожеві квіти з ніжним ароматом. Дякую за поради, як її посадити.</p><div class="who"><b>Марина</b><small>Тернопіль · Півонія «Сара Бернар»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Потрібен був акцент для альпійської гірки. Сріблясто-блакитна подушка виглядає чудово, догляду майже ніякого.</p><div class="who"><b>Олег</b><small>Харків · Ялівець «Блю Стар»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Посадила вздовж огорожі. З липня й до осені суцвіття кремово-рожеві, сусіди питають, де брала.</p><div class="who"><b>Катерина</b><small>Дніпро · Гортензія волотиста</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Сосна стоїть на терасі, крона гарно сформована. Підбір рослин на сайті допоміг не помилитися з освітленням.</p><div class="who"><b>Тарас</b><small>Івано-Франківськ · Сосна звичайна</small></div></article></div></section>
+<div class="pg" id="reviews"><section><h2>Відгуки покупців</h2><div class="rvw"><div id="rv"><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Вперше замовляла дерево онлайн і хвилювалась. Магнолія приїхала на третій день, у щільній коробці, з закритим кореневим комом. Навесні вона вкрилась рожево-білими квітами.</p><div class="who"><b>Ірина</b><small>Київ · Магнолія «Сузан»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Взяв двадцять туй на живу огорожу. Усі однакові, рівні й без жовтизни. Прижилися всі до одної.</p><div class="who"><b>Андрій</b><small>Львів · Туя «Смарагд»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Півонія вже наступного літа д��ла великі рожеві квіти з ніжним ароматом. Дякую за поради, як її посадити.</p><div class="who"><b>Марина</b><small>Тернопіль · Півонія «Сара Бернар»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Потрібен був акцент для альпійської гірки. Сріблясто-блакитна подушка виглядає чудово, догляду майже ніякого.</p><div class="who"><b>Олег</b><small>Харків · Ялівець «Блю Стар»</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Посадила вздовж огорожі. З липня й до осені суцвіття кремово-рожеві, сусіди питають, де брала.</p><div class="who"><b>Катерина</b><small>Дніпро · Гортензія волотиста</small></div></article><article class="rv"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><p>Сосна стоїть на терасі, крона гарно сформована. Підбір рослин на сайті допоміг не помилитися з освітленням.</p><div class="who"><b>Тарас</b><small>Івано-Франківськ · Сосна звичайна</small></div></article></div></section>
 <section><div class="two"><div class="card"><div class="b"><h3>Як ми пакуємо</h3><p>Рослини їдуть у захисних коробах із закритим кореневим комом.</p><p>Доставка: Новою поштою по всій Україні, 2–4 робочі дні.</p></div></div><div class="card"><div class="b"><h3>Питання? Напишіть нам</h3><p>Порадимо, що посадити біля будинку, на терасі чи балконі.</p><p><b><a href="mailto:hello@verde.example">hello@verde.example</a></b><br><a href="tel:+380440000000">+38 (044) 000-00-00</a><br>Щодня 9:00–19:00</p></div></div></div></section></div>
 <div id="co" hidden><div class="co-bd" data-close></div><div class="co-box" role="dialog" aria-modal="true" aria-labelledby="co-t"><button class="co-x" type="button" data-close aria-label="Закрити">×</button>
 <div id="co-form"><h3 id="co-t">Оформлення замовлення</h3><div class="co-grid">
@@ -319,31 +295,32 @@ header.dk .lg button{color:var(--ink);text-shadow:none}
 </div></div>
 </main>
 <!-- TODO: замінити тестові контакти (hello@verde.example, +380440000000, адреса) на реальні або прибрати -->
-<footer><div class="w fg"><div><b class="fl">VERDE</b><p>Рослини для життя на свіжому повітрі: хвойні, троянди, півонії, кущі й дерева.</p></div><div><h4>Контакти</h4><p><a href="tel:+380440000000">+38 (044) 000-00-00</a><br><a href="mailto:hello@verde.example">hello@verde.example</a></p></div><div><h4>Адреса</h4><p>м. Київ, вул. Садова, 12<br>Щодня 9:00–19:00</p></div><!-- TODO: замінити посилання на реальні профілі VERDE (зараз ведуть на головні сторінки соцмереж) -->
+<footer class="fin" aria-labelledby="fin-t"><div class="fin-in"><p class="fin-k">VERDE</p><h2 id="fin-t" class="fin-h">Ваш сад починається з першої рослини</h2><p class="fin-p">Підберемо рослини під ваше світло, ґрунт і настрій — і привеземо їх живими та здоровими.</p></div><div class="w fg"><div><b class="fl">VERDE</b><p>Рослини для життя на свіжому повітрі: хвойні, троянди, півонії, кущі й дерева.</p></div><div><h4>Контакти</h4><p><a href="tel:+380440000000">+38 (044) 000-00-00</a><br><a href="mailto:hello@verde.example">hello@verde.example</a></p></div><div><h4>Адреса</h4><p>м. Київ, вул. Садова, 12<br>Щодня 9:00–19:00</p></div><!-- TODO: замінити посилання на реальні профілі VERDE (зараз ведуть на головні сторінки соцмереж) -->
 <div><h4>Соцмережі</h4><p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><br><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a><br><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a></p></div></div><div class="w fb">Навчальний портфоліо-проєкт. Ціни умовні.</div></footer>
-<script>const IMG={t2:"assets/img-32adb1a5.webp",j11:"assets/img-2f011877.webp",p4:"assets/img-baca45cb.webp",p5:"assets/img-2be5d8dc.webp",i5:"assets/img-39019de8.webp",i7:"assets/img-04ec6a88.webp",i8:"assets/img-f77bb157.webp",i9:"assets/img-2cade438.webp",i10:"assets/img-6f55592f.webp",i11:"assets/img-ccd597ab.webp",n6:"assets/img-d2c27d89.webp",n7:"assets/img-c94e033d.webp",n8:"assets/img-b02e64e5.webp",n13:"assets/img-b72f77f3.webp",n14:"assets/img-bda2439f.webp",n15:"assets/img-e732293e.webp",n16:"assets/img-38bafc45.webp",n17:"assets/img-7b3e80df.webp",n18:"assets/img-aae344a5.webp",n19:"assets/img-8a1a1ef8.webp"};</script>
+<script>const IMG={t2:"assets/img-fig-t2.webp",j11:"assets/img-fig-j11.webp",p4:"assets/img-baca45cb.webp",p5:"assets/img-2be5d8dc.webp",i5:"assets/img-39019de8.webp",i7:"assets/img-fig-i7.webp",i8:"assets/img-f77bb157.webp?v=2",i9:"assets/img-fig-i9.webp",i10:"assets/img-fig-i10.webp",i11:"assets/img-ccd597ab.webp",n6:"assets/img-d2c27d89.webp",n7:"assets/img-c94e033d.webp",n8:"assets/img-b02e64e5.webp",n13:"assets/img-b72f77f3.webp",n14:"assets/img-bda2439f.webp",n15:"assets/img-e732293e.webp",n16:"assets/img-38bafc45.webp?v=2",n17:"assets/img-7b3e80df.webp",n18:"assets/img-aae344a5.webp?v=2",n19:"assets/img-fig-n19.webp"};</script>
 <script>
 const P=[
-["Туя «Смарагд»","хвойні","sp",1,"privacy",320,"1,5–2 м",1,"#1d6b3f","Вузька жива огорожа, що тримає форму цілий рік."],
+["Ялина звичайна","хвойні","s",2,"green",520,"до 3 м",0,"#1d6b3f","Класична зелена ялина з густою конічною кроною."],
 ["Ялівець «Блю Стар»","хвойні","sp",1,"decor",280,"0,4 м",1,"#4d8fa8","Сріблясто-блакитна подушка для альпійської гірки."],
 ["Ялина колюча «Глаука»","хвойні","s",2,"decor",890,"до 3 м",0,"#5a8fb0","Сизі гілки — акцент біля входу."],
 ["Сосна звичайна","хвойні","sp",1,"green",690,"1–1,2 м",1,"#2a6b3a","Формована крона й мінімум догляду. Чудово виглядає на терасі."],
 ["Троянда «Ред Наомі»","квіти","s",3,"color",260,"0,8 м",1,"#c4162f","Класичні червоні бутони з довгим цвітінням."],
 ["Півонія «Сара Бернар»","квіти","sp",2,"color",340,"0,9 м",0,"#f08aa3","Великі рожеві квіти з ніжним ароматом."],
 ["Лаванда «Гідкот»","квіти","s",1,"decor",120,"0,5 м",1,"#8a6bbf","Аромат, бджоли й мінімум догляду."],
-["Ехінацея «Магнус»","квіти","s",1,"color",140,"0,8 м",0,"#d6457a","Рожеві ромашки до самих заморозків."],
+["Ехінацея ��Магнус»","квіти","s",1,"color",140,"0,8 м",0,"#d6457a","Рожеві ромашки до самих заморозків."],
 ["Хоста «Френсіс Вільямс»","квіти","h",1,"green",190,"0,6 м",1,"#6fae85","Великі сизо-зелені листки для тіні."],
 ["Гортензія волотиста","кущі","ph",2,"color",230,"1,2–1,8 м",1,"#f6c9d3","Кремово-рожеві суцвіття-конуси з липня до осені."],
 ["Барбарис Тунберга «Атропурпуреа»","кущі","sp",1,"color",180,"1 м",1,"#a3162d","Бордове листя, що червоніє восени."],
 ["Спірея «Шіробана»","кущі","s",1,"color",150,"0,7 м",1,"#f27a9c","Рожево-білі щитки квітів усе літо."],
 ["Вейгела «Нана Пурпуреа»","кущі","sp",2,"color",210,"1 м",0,"#e65a80","Темне листя й рожеві дзвіночки навесні."],
-["Клен японський «Атропурпуреум»","дерева","p",2,"decor",950,"3 м",0,"#9e1b32","Філігранне червоне листя для півтіні."],
+["Клен червоний «Атропурпуреум»","дерева","p",2,"decor",680,"3 м",0,"#9e1b32","Філігранне червоне листя для півтіні."],
 ["Магнолія «Сузан»","дерева","sp",2,"decor",1200,"3–4 м",0,"#f4a3bd","Рожево-білі тюльпани-квіти ще до листя."],
 ["Горобина звичайна","дерева","sp",1,"green",520,"5 м",0,"#d6322a","Червоні грона ягід прикрашають осінь."],
 ["Яблуня декоративна «Роялті»","дерева","s",1,"decor",680,"4 м",0,"#b0144a","Малинове цвітіння і темно-червоні плоди."],
-["Троянда кущова червона","кущі","s",2,"color",290,"1,5–2 м",1,"#c4162f","Високий кущ, густо вкритий червоними квітами. Ефектний біля ґанку."],
-["Камелія японська на штамбі","дерева","sp",3,"decor",1450,"1,5–2 м",0,"#e8578a","Куляста крона з рожевими квітами. Для великого вазона, на зиму — у світле приміщення."],
+["Троянда кущова червона","кущі","s",2,"color",290,"1,5–2 м",1,"#c4162f","Високий кущ, густо вкритий червоними квітами. Ефектний біля ґ��нку."],
+["Камелія японська на штамбі","дерева","sp",3,"decor",620,"1,5–2 м",0,"#e8578a","Куляста крона з рожевими квітами. Для великого вазона, на зиму — у світле приміщення."],
 ["Півонія жовта","квіти","sp",2,"color",420,"0,8 м",0,"#f2d46b","Кремово-жовті махрові квіти з теплою серединкою. Цвіте в червні."]];
+const ORD=[3,2,0,1,13,5,11,7,6,8,19,10,9,12,4,14,16,15,18,17];
 const PH={0:"t2",1:"j11",5:"p4",19:"p5",2:"i8",3:"i5",4:"i10",9:"i7",17:"i9",18:"i11",6:"n6",7:"n7",8:"n8",10:"n13",11:"n14",12:"n15",13:"n16",14:"n17",15:"n18",16:"n19"};
 const SUN={s:"Сонце",p:"Півтінь",h:"Тінь"},CARE=["","Легко","Середньо","Потрібен догляд"];
 const $=s=>document.querySelector(s);
@@ -358,7 +335,7 @@ function card(i){const p=P[i];return `<div class="card"><div class="im">${PH[i]?
 let cat="усі",sun="будь-яке";
 function cats(){$("#cc").innerHTML=["усі","хвойні","квіти","кущі","дерева"].map(c=>`<button class="chip ${c==cat?"on":""}" data-c="${c}">${c[0].toUpperCase()+c.slice(1)}</button>`).join("");
 $("#cs").innerHTML=["будь-яке","Сонце","Півтінь","Тінь"].map(c=>`<button class="chip ${c==sun?"on":""}" data-s="${c}">${c=="будь-яке"?"Освітлення: будь-яке":c}</button>`).join("")}
-function list(){const k={"Сонце":"s","Півтінь":"p","Тінь":"h"}[sun];const ids=P.map((p,i)=>i).filter(i=>(cat=="усі"||P[i][1]==cat)&&(!k||P[i][2].includes(k)));
+function list(){const qs=($("#q")?$("#q").value:"").trim().toLowerCase(),k={"Сонце":"s","Півтінь":"p","Тінь":"h"}[sun];const ids=ORD.filter(i=>(cat=="усі"||P[i][1]==cat)&&(!k||P[i][2].includes(k))&&(!qs||(P[i][0]+" "+(typeof EN!="undefined"&&EN[P[i][0]]||"")).toLowerCase().includes(qs)));
 $("#cn").textContent=`Знайдено рослин: ${ids.length}`;$("#cg").innerHTML=ids.map(card).join("")||"<p>Нічого не знайдено — змініть фільтри.</p>";cats()}
 const QTY=new Map(),qty=i=>QTY.get(i)||1;
 function garden(){const a=[...G],n=a.reduce((s,i)=>s+qty(i),0),sum=a.reduce((s,i)=>s+P[i][5]*qty(i),0);$("#gc").textContent=n;$("#gl").innerHTML=a.length?a.map(i=>`<li><span>${P[i][0]}</span><span class="qt"><button type="button" data-qm="${i}" aria-label="Менше">−</button><b>${qty(i)}</b><button type="button" data-qp="${i}" aria-label="Більше">+</button></span><b class="lp">${P[i][5]*qty(i)} ₴</b></li>`).join(""):"<li>Поки порожньо. Додайте рослини з каталогу.</li>";$("#gt").innerHTML=a.length?`<b>Разом: ${sum} ₴</b>`:"";const b=$("#gco");if(b)b.hidden=!a.length}
@@ -370,7 +347,7 @@ $("#spaces").innerHTML=SP.map(s=>`<a class="sp" href="#finder" data-sp="${s[2]}"
 $("#heroart").innerHTML=art(P[5]).replace('<svg','<svg style="max-height:340px"');
 $("#arts").innerHTML=[["Як обрати рослини для сонячної ділянки","Троянди, лаванда й ехінацея люблять 6+ годин сонця."],["7 рослин, які майже не потребують догляду","Туя, ялівець, спірея, барбарис — просто посадіть і насолоджуйтесь."],["Що посадити в тіні","Хоста й інші тіньовитривалі рослини оживлять північний бік будинку й затінені кути."],["Жива огорожа без зайвих турбот","Ряд туй «Смарагд» з кроком 60–80 см закриє двір за 2–3 роки."]].map(a=>`<div class="card"><div class="b"><h3>${a[0]}</h3><p>${a[1]}</p></div></div>`).join("");
 // finder
-const Q=[["Де ви садитимете?",[["Сад","g"],["Тераса","t"],["Балкон","b"],["Біля входу","f"]]],["Скільки сонця на ділянці?",[["Багато (6+ год)","s"],["Півтінь","p"],["Здебільшого тінь","h"]]],["Скільки часу на догляд?",[["Люблю садівництво",3],["Трохи можу",2],["Нехай буде легко",1]]],["Що вам найважливіше?",[["Кольорові квіти","color"],["Приватність","privacy"],["Просто зелень","green"],["Декоративність","decor"]]]];
+const Q=[["Де ви садитимете?",[["Сад","g"],["Тераса","t"],["Балкон","b"],["Біля входу","f"]]],["Скільки сонця на ділянці?",[["Багато (6+ год)","s"],["Півтінь","p"],["Здебільшого тінь","h"]]],["Скільки часу на догляд?",[["Люблю садівництво",3],["Трохи можу",2],["Нехай буде легко",1]]],["Що вам н��йважливіше?",[["Кольорові квіти","color"],["Приватність","privacy"],["Просто зелень","green"],["Декоративність","decor"]]]];
 let step=0,ans=[],done=false;
 function ask(){done=false;const q=Q[step];$("#fq").innerHTML=`<div class="bar"><i style="width:${step/Q.length*100}%"></i></div><div class="st">Крок ${step+1} з ${Q.length}</div><h3>${q[0]}</h3><div class="opts">${q[1].map((o,j)=>`<button class="chip" data-a="${j}">${o[0]}</button>`).join("")}</div>`}
 function res(){done=true;const[w,s,c,g]=ans;let sc=P.map((p,i)=>{let n=0;if(p[2].includes(s))n+=3;if(p[3]<=c)n+=2;if(p[4]==g)n+=3;if(w=="b"&&!p[7])return[-1,i];if(w=="f"&&p[1]=="дерева")n+=1;if(p[1]=="квіти"&&g=="color")n+=1;return[n,i]}).filter(a=>a[0]>=5).sort((a,b)=>b[0]-a[0]).slice(0,6);
@@ -400,10 +377,6 @@ refresh();ask();spy();
   let lastP=-1,smooth=0;
   const ez=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
   function apply(p){
-    const tp=ez(Math.min(1,p/.35));
-    content.style.transform='translateY('+(tp*-90)+'px)';
-    content.style.opacity=(1-tp).toFixed(3);
-    content.style.pointerEvents=tp>.6?'none':'';
     const i=ez(Math.max(0,Math.min(1,(p-.35)/.15))),o=ez(Math.max(0,Math.min(1,(p-.55)/.12)));
     overlay.style.opacity=(i*(1-o)).toFixed(3);
     overlay.style.transform='translateY('+((1-i)*30+o*-30)+'px)';
@@ -422,13 +395,13 @@ refresh();ask();spy();
 </script>
 <script>
 /* мова UA / EN */
-const EN={"Головна":"Home","Каталог":"Catalog","Підбір рослин":"Plant finder","Гід і доставка":"Guide & delivery","Мій сад:":"My garden:","Мій сад":"My garden","Зробіть місце, де хочеться бути":"Make a place where you want to be","Підібрати рослини":"Find plants","Дивитись каталог":"Browse the catalog","Хвойні, троянди, півонії, кущі та дерева з українських розплідників. Підберемо рослини під сонце, ґрунт і ваш час на догляд.":"Conifers, roses, peonies, shrubs and trees from Ukrainian nurseries. We match plants to your sun, soil and the time you have to care for them.","Від ідеї до саду":"From idea to garden","Рослини, що":"Plants that","приживаються":"take root","надовго":"for good","Обирайте за простором":"Choose by space","Сад":"Garden","Доріжки, арки й шари кольору":"Paths, arches and layers of colour","Тераса і балкон":"Terrace & balcony","Квіти у вазонах біля місця відпочинку":"Potted flowers by your seating area","Подвір'я біля входу":"Front yard","Гарне перше враження":"A great first impression","Уздовж огорожі":"Along the fence","Гортензії й кущі, що цвітуть до осені":"Hydrangeas and shrubs that bloom until autumn","Каталог рослин":"Plant catalog","Усі":"All","Хвойні":"Conifers","Квіти":"Flowers","Кущі":"Shrubs","Дерева":"Trees","хвойні":"conifers","квіти":"flowers","кущі":"shrubs","дерева":"trees","Освітлення: будь-яке":"Light: any","Додати в сад":"Add to garden","У саду ✓":"In garden ✓","Нічого не знайдено — змініть фільтри.":"Nothing found — change the filters.","Поки порожньо. Додайте рослини з каталогу.":"Empty for now. Add plants from the catalog.",
-"Туя «Смарагд»":"Thuja 'Smaragd'","Вузька жива огорожа, що тримає форму цілий рік.":"A narrow living hedge that holds its shape all year.","Ялівець «Блю Стар»":"Juniper 'Blue Star'","Сріблясто-блакитна подушка для альпійської гірки.":"A silvery-blue cushion for a rock garden.","Ялина колюча «Глаука»":"Blue spruce 'Glauca'","Сизі гілки — акцент біля входу.":"Blue-grey branches — an accent by the entrance.","Сосна звичайна":"Scots pine","Формована крона й мінімум догляду. Чудово виглядає на терасі.":"Shaped crown and minimal care. Looks great on a terrace.","Троянда «Ред Наомі»":"Rose 'Red Naomi'","Класичні червоні бутони з довгим цвітінням.":"Classic red buds with long blooming.","Півонія «Сара Бернар»":"Peony 'Sarah Bernhardt'","Великі рожеві квіти з ніжним ароматом.":"Large pink flowers with a delicate scent.","Лаванда «Гідкот»":"Lavender 'Hidcote'","Аромат, бджоли й мінімум догляду.":"Fragrance, bees and minimal care.","Ехінацея «Магнус»":"Echinacea 'Magnus'","Рожеві ромашки до самих заморозків.":"Pink daisies right up to the frosts.","Хоста «Френсіс Вільямс»":"Hosta 'Frances Williams'","Великі сизо-зелені листки для тіні.":"Big blue-green leaves for shade.","Гортензія волотиста":"Panicle hydrangea","Кремово-рожеві суцвіття-конуси з липня до осені.":"Cream-pink cone blooms from July to autumn.","Барбарис Тунберга «Атропурпуреа»":"Japanese barberry 'Atropurpurea'","Бордове листя, що червоніє восени.":"Burgundy leaves that turn red in autumn.","Спірея «Шіробана»":"Spirea 'Shirobana'","Рожево-білі щитки квітів усе літо.":"Pink-and-white flower clusters all summer.","Вейгела «Нана Пурпуреа»":"Weigela 'Nana Purpurea'","Темне листя й рожеві дзвіночки навесні.":"Dark leaves and pink bells in spring.","Клен японський «Атропурпуреум»":"Japanese maple 'Atropurpureum'","Філігранне червоне листя для півтіні.":"Delicate red foliage for part shade.","Магнолія «Сузан»":"Magnolia 'Susan'","Рожево-білі тюльпани-квіти ще до листя.":"Pink-white tulip-shaped flowers before the leaves.","Горобина звичайна":"Rowan","Червоні грона ягід прикрашають осінь.":"Red berry clusters decorate the autumn.","Яблуня декоративна «Роялті»":"Ornamental crabapple 'Royalty'","Малинове цвітіння і темно-червоні плоди.":"Crimson blossom and dark red fruit.","Троянда кущова червона":"Red shrub rose","Високий кущ, густо вкритий червоними квітами. Ефектний біля ґанку.":"A tall shrub densely covered in red flowers. Striking by the porch.","Камелія японська на штамбі":"Japanese camellia on a stem","Куляста крона з рожевими квітами. Для великого вазона, на зиму — у світле приміщення.":"A round crown with pink flowers. For a large pot; bring it into a bright room for winter.","Півонія жовта":"Yellow peony","Кремово-жовті махрові квіти з теплою серединкою. Цвіте в червні.":"Creamy-yellow double flowers with a warm centre. Blooms in June.",
-"Весна":"Spring","Літо":"Summer","Осінь":"Autumn","Зима":"Winter","Троянди, багаторічники, кущі, плодові дерева":"Roses, perennials, shrubs, fruit trees","Рослини в контейнерах, пряні трави, балконні квіти":"Container plants, herbs, balcony flowers","Хвойні, дерева, кущі, цибулини півоній і тюльпанів":"Conifers, trees, shrubs, peony and tulip bulbs","Планування саду, підготовка ділянки":"Garden planning, plot preparation","Січ":"Jan","Лют":"Feb","Бер":"Mar","Кві":"Apr","Тра":"May","Чер":"Jun","Лип":"Jul","Сер":"Aug","Вер":"Sep","Жов":"Oct","Лис":"Nov","Гру":"Dec","Троянди":"Roses","Півонії":"Peonies","Рослини в контейнерах":"Container plants",
+const EN={"Головна":"Home","Каталог":"Catalog","Підбір рослин":"Plant finder","Гід і доставка":"Guide & delivery","Мій сад:":"My garden:","Мій сад":"My garden","Створимо сад, де захочеться бути":"A garden where you'll want to be","Продаємо рослини, які перетворять вашу ділянку на сад мрії":"We sell plants that turn your plot into a dream garden","Зробіть місце, де хочеться бути":"Make a place where you want to be","Підібрати рослини":"Find plants","Дивитись каталог":"Browse the catalog","Хвойні, троянди, півонії, кущі та дерева з українських розплідників. Підберемо рослини під сонце, ґрунт і ваш час на догляд.":"Conifers, roses, peonies, shrubs and trees from Ukrainian nurseries. We match plants to your sun, soil and the time you have to care for them.","Від ідеї до саду":"From idea to garden","Рослини, що":"Plants that","приживаються":"take root","надовго":"for good","Обирайте за простором":"Choose by space","Сад":"Garden","Доріжки, арки й шари кольору":"Paths, arches and layers of colour","Тераса і балкон":"Terrace & balcony","Квіти у вазонах біля місця відпочинку":"Potted flowers by your seating area","Подвір'я біля входу":"Front yard","Гарне перше враження":"A great first impression","Уздовж огорожі":"Along the fence","Гортензії й кущі, що цвітуть до осені":"Hydrangeas and shrubs that bloom until autumn","Каталог рослин":"Plant catalog","Усі":"All","Хвойні":"Conifers","Квіти":"Flowers","Кущі":"Shrubs","Дерева":"Trees","хвойні":"conifers","квіти":"flowers","кущі":"shrubs","дерева":"trees","Освітлення: будь-яке":"Light: any","Додати в сад":"Add to garden","У саду ✓":"In garden ✓","Нічого не знайдено — змініть фільтри.":"Nothing found — change the filters.","Поки порожньо. Додайте рослини з каталогу.":"Empty for now. Add plants from the catalog.",
+"Туя «Смарагд»":"Thuja 'Smaragd'","Вузька жива огорож��, що тримає форму цілий рік.":"A narrow living hedge that holds its shape all year.","Ялівець «Блю Стар»":"Juniper 'Blue Star'","Сріблясто-блакитна подушка для альпійської гірки.":"A silvery-blue cushion for a rock garden.","Ялина колюча «Глаука»":"Blue spruce 'Glauca'","Сизі гілки — акцент біля входу.":"Blue-grey branches — an accent by the entrance.","Сосна звичайна":"Scots pine","Формована крона й мінімум догляду. Чудово виглядає на терасі.":"Shaped crown and minimal care. Looks great on a terrace.","Троянда «Ред Наомі»":"Rose 'Red Naomi'","Класичні червоні бутони з довгим цвітінням.":"Classic red buds with long blooming.","Півонія «Сара Бернар»":"Peony 'Sarah Bernhardt'","Великі рожеві квіти з ніжним ароматом.":"Large pink flowers with a delicate scent.","Лаванда «Гідкот»":"Lavender 'Hidcote'","Аромат, бджоли й мінімум догляду.":"Fragrance, bees and minimal care.","Ехінацея «Магнус»":"Echinacea 'Magnus'","Рожеві ромашки до самих заморозків.":"Pink daisies right up to the frosts.","Хоста «Френсіс Вільямс»":"Hosta 'Frances Williams'","Великі сизо-зелені листки для тіні.":"Big blue-green leaves for shade.","Гортензія волотиста":"Panicle hydrangea","Кремово-рожеві суцвіття-конуси з липня до осені.":"Cream-pink cone blooms from July to autumn.","Барбарис Тунберга «Атропурпуреа»":"Japanese barberry 'Atropurpurea'","Бордове листя, що червоніє восени.":"Burgundy leaves that turn red in autumn.","Спірея «Шіробана»":"Spirea 'Shirobana'","Рожево-білі щитки квітів усе літо.":"Pink-and-white flower clusters all summer.","Вейгела «Нана Пурпуреа»":"Weigela 'Nana Purpurea'","Темне листя й рожеві дзвіночки навесні.":"Dark leaves and pink bells in spring.","Клен японський «Атропурпуреум»":"Japanese maple 'Atropurpureum'","Філігранне червоне листя для півтіні.":"Delicate red foliage for part shade.","Магнолія «Сузан»":"Magnolia 'Susan'","Рожево-білі тюльпани-квіти ще до листя.":"Pink-white tulip-shaped flowers before the leaves.","Горобина звичайна":"Rowan","Червоні грона ягід прикрашають осінь.":"Red berry clusters decorate the autumn.","Яблуня декоративна «Роялті»":"Ornamental crabapple 'Royalty'","Малинове цвітіння і темно-червоні плоди.":"Crimson blossom and dark red fruit.","Троянда кущова червона":"Red shrub rose","Високий кущ, густо вкритий червоними квітами. Ефектний біля ґанку.":"A tall shrub densely covered in red flowers. Striking by the porch.","Камелія японська на штамбі":"Japanese camellia on a stem","Куляста крона з рожевими квітами. Для великого вазона, на зиму — у світле приміщення.":"A round crown with pink flowers. For a large pot; bring it into a bright room for winter.","Півонія жовта":"Yellow peony","Кремово-жовті махрові квіти з теплою серединкою. Цвіте в червні.":"Creamy-yellow double flowers with a warm centre. Blooms in June.",
+"Весна":"Spring","Літо":"Summer","Осінь":"Autumn","Зима":"Winter","Троянди, багаторічники, кущі, плодові дерева":"Roses, perennials, shrubs, fruit trees","Рослини в контейнерах, пряні трави, балконні квіти":"Container plants, herbs, balcony flowers","Хвойні, дерева, кущі, цибулини півоній і тюльпанів":"Conifers, trees, shrubs, peony and tulip bulbs","Планування саду, підготовка ділянки":"Garden planning, plot preparation","Січ":"Jan","Лют":"Feb","Бер":"Mar","Кві":"Apr","Тра":"May","��ер":"Jun","Лип":"Jul","Сер":"Aug","Вер":"Sep","Жов":"Oct","Лис":"Nov","Гру":"Dec","Троянди":"Roses","Півонії":"Peonies","Рослини в контейнерах":"Container plants",
 "Підбір рослин для вашого простору":"Find plants for your space","Де ви садитимете?":"Where will you plant?","Тераса":"Terrace","Балкон":"Balcony","Біля входу":"By the entrance","Скільки сонця на ділянці?":"How much sun does the spot get?","Багато (6+ год)":"A lot (6+ hours)","Здебільшого тінь":"Mostly shade","Скільки часу на догляд?":"How much time for care?","Люблю садівництво":"I love gardening","Трохи можу":"A little","Нехай буде легко":"Keep it easy","Що вам найважливіше?":"What matters most?","Кольорові квіти":"Colourful flowers","Приватність":"Privacy","Просто зелень":"Just greenery","Декоративність":"Decorative look","Ваш добір готовий":"Your selection is ready","Для цих умов нічого не знайшли. Спробуйте змінити відповіді.":"Nothing found for these conditions. Try changing your answers.","Пройти знову":"Start over",
 "Гід садівника":"Gardener's guide","Як обрати рослини для сонячної ділянки":"How to choose plants for a sunny spot","Троянди, лаванда й ехінацея люблять 6+ годин сонця.":"Roses, lavender and echinacea love 6+ hours of sun.","7 рослин, які майже не потребують догляду":"7 plants that need almost no care","Туя, ялівець, спірея, барбарис — просто посадіть і насолоджуйтесь.":"Thuja, juniper, spirea, barberry — just plant and enjoy.","Що посадити в тіні":"What to plant in the shade","Хоста й інші тіньовитривалі рослини оживлять північний бік будинку й затінені кути.":"Hosta and other shade-tolerant plants will brighten the north side of the house and shaded corners.","Жива огорожа без зайвих турбот":"A hassle-free living hedge","Ряд туй «Смарагд» з кроком 60–80 см закриє двір за 2–3 роки.":"A row of 'Smaragd' thuja spaced 60–80 cm apart will screen the yard in 2–3 years.","Доставка":"Delivery","робочі дні доставки":"business days delivery","Нова пошта":"Nova Poshta","по всій Україні":"across Ukraine","Закритий":"Closed","кореневий ком":"root ball","Як ми пакуємо":"How we pack","Рослини їдуть у захисних коробах із закритим кореневим комом. Доставка Новою поштою по всій Україні, 2–4 робочі дні.":"Plants travel in protective boxes with a closed root ball. Delivery by Nova Poshta across Ukraine, 2–4 business days.","Питання? Напишіть нам":"Questions? Write to us","Порадимо, що посадити біля будинку, на терасі чи балконі.":"We'll advise what to plant by the house, on a terrace or a balcony.",
 "Рослини для життя на свіжому повітрі: хвойні, троянди, півонії, кущі й дерева.":"Plants for life outdoors: conifers, roses, peonies, shrubs and trees.","Контакти":"Contacts","Адреса":"Address","м. Київ, вул. Садова, 12":"Kyiv, 12 Sadova St.","Соцмережі":"Social","Навчальний портфоліо-проєкт. Ціни умовні.":"Educational portfolio project. Prices are illustrative."};
-Object.assign(EN,{"Відгуки": "Reviews", "Відгуки покупців": "Customer reviews", "Рослини їдуть у захисних коробах із закритим кореневим комом.": "Plants travel in protective boxes with a closed root ball.", "Доставка: Новою поштою по всій Україні, 2–4 робочі дні.": "Delivery: by Nova Poshta across Ukraine, 2–4 business days.", "Ірина": "Iryna", "Андрій": "Andrii", "Марина": "Maryna", "Олег": "Oleh", "Софія": "Sofiia", "Катерина": "Kateryna", "Тарас": "Taras", "Київ": "Kyiv", "Львів": "Lviv", "Тернопіль": "Ternopil", "Харків": "Kharkiv", "Одеса": "Odesa", "Дніпро": "Dnipro", "Івано-Франківськ": "Ivano-Frankivsk", "Вперше замовляла дерево онлайн і хвилювалась. Магнолія приїхала на третій день, у щільній коробці, з закритим кореневим комом. Навесні вона вкрилась рожево-білими квітами.": "First time ordering a tree online and I was nervous. The magnolia arrived on day three, in a sturdy box with a closed root ball. By spring it was covered in pink-and-white flowers.", "Київ · Магнолія «Сузан»": "Kyiv · Magnolia ‘Susan’", "Взяв двадцять туй на живу огорожу. Усі однакові, рівні й без жовтизни. Прижилися всі до одної.": "I bought twenty thujas for a living hedge. All uniform, straight and without any yellowing. Every single one took root.", "Львів · Туя «Смарагд»": "Lviv · Thuja ‘Smaragd’", "Півонія вже наступного літа дала великі рожеві квіти з ніжним ароматом. Дякую за поради, як її посадити.": "The peony gave big pink flowers with a delicate scent the very next summer. Thanks for the planting tips.", "Тернопіль · Півонія «Сара Бернар»": "Ternopil · Peony ‘Sarah Bernhardt’", "Потрібен був акцент для альпійської гірки. Сріблясто-блакитна подушка виглядає чудово, догляду майже ніякого.": "I needed an accent for my rock garden. The silvery-blue cushion looks great and needs almost no care.", "Харків · Ялівець «Блю Стар»": "Kharkiv · Juniper ‘Blue Star’", "Насичені червоні бутони й довге цвітіння. Єдине, що хотілося б швидшої відповіді в чаті, а так усе дуже сподобалось.": "Rich red buds and long blooming. My only wish is a faster reply in the chat, but I liked everything else a lot.", "Одеса · Троянда «Ред Наомі»": "Odesa · Rose ‘Red Naomi’", "Посадила вздовж огорожі. З липня й до осені суцвіття кремово-рожеві, сусіди питають, де брала.": "I planted it along the fence. From July until autumn the blooms are creamy pink, and the neighbours keep asking where I got it.", "Дніпро · Гортензія волотиста": "Dnipro · Panicle hydrangea", "Сосна стоїть на терасі, крона гарно сформована. Підбір рослин на сайті допоміг не помилитися з освітленням.": "The pine stands on the terrace and its crown is nicely shaped. The plant finder on the site helped me get the light right.", "Івано-Франківськ · Сосна звичайна": "Ivano-Frankivsk · Scots pine"});
+Object.assign(EN,{"Відгуки": "Reviews", "Відгуки покупців": "Customer reviews", "Рослини їдуть у захисних коробах із закритим кореневим комом.": "Plants travel in protective boxes with a closed root ball.", "Доставка: Новою поштою по всій Україні, 2–4 робочі дні.": "Delivery: by Nova Poshta across Ukraine, 2–4 business days.", "Ірина": "Iryna", "Андрій": "Andrii", "Марина": "Maryna", "Олег": "Oleh", "Софія": "Sofiia", "��атерина": "Kateryna", "Тарас": "Taras", "Київ": "Kyiv", "Л��вів": "Lviv", "Тернопіль": "Ternopil", "Харків": "Kharkiv", "Одеса": "Odesa", "Дніпро": "Dnipro", "Івано-Франківськ": "Ivano-Frankivsk", "Вперше замовляла дерево онлайн і хвилювалась. Магнолія приїхала на третій день, у щільній коробці, з закритим кореневим комом. Навесні вона вкрилась рожево-білими квітами.": "First time ordering a tree online and I was nervous. The magnolia arrived on day three, in a sturdy box with a closed root ball. By spring it was covered in pink-and-white flowers.", "Київ · Магнолія «Сузан»": "Kyiv · Magnolia ‘Susan’", "Взяв двадцять туй на живу огорожу. Усі однакові, рівні й без жовтизни. Прижилися всі до одної.": "I bought twenty thujas for a living hedge. All uniform, straight and without any yellowing. Every single one took root.", "Львів · Туя «Смарагд»": "Lviv · Thuja ‘Smaragd’", "Півонія вже наступного літа дала великі рожеві квіти з ніжним ароматом. Дякую за поради, як її посадити.": "The peony gave big pink flowers with a delicate scent the very next summer. Thanks for the planting tips.", "Тернопіль · Півонія «Сара Бернар»": "Ternopil · Peony ‘Sarah Bernhardt’", "Потрібен був акцент для альпійської гірки. Сріблясто-блакитна подушка виглядає чудово, догляду майже ніякого.": "I needed an accent for my rock garden. The silvery-blue cushion looks great and needs almost no care.", "Харків · Ялівець «Блю Стар»": "Kharkiv · Juniper ‘Blue Star’", "Насичені червоні бутони й довге цвітіння. Єдине, що хотілося б швидшої відповіді в чаті, а так усе дуже сподобалось.": "Rich red buds and long blooming. My only wish is a faster reply in the chat, but I liked everything else a lot.", "Одеса · Троянда «Ред Наомі»": "Odesa · Rose ‘Red Naomi’", "Посадила вздовж огорожі. З липня й до осені суцвіття кремово-рожеві, сусіди питають, де брала.": "I planted it along the fence. From July until autumn the blooms are creamy pink, and the neighbours keep asking where I got it.", "Дніпро · Гортензія волотиста": "Dnipro · Panicle hydrangea", "Сосна стоїть на терасі, крона гарно сформована. Підбір рослин на сайті допоміг не помилитися з освітленням.": "The pine stands on the terrace and its crown is nicely shaped. The plant finder on the site helped me get the light right.", "Івано-Франківськ · Сосна звичайна": "Ivano-Frankivsk · Scots pine"});
 Object.assign(EN,{"Оформити замовлення": "Place order", "Оформлення замовлення": "Checkout", "Ваші дані": "Your details", "Ім’я та прізвище": "Full name", "Телефон": "Phone", "Місто": "City", "Відділення Нової пошти": "Nova Poshta branch", "Коментар до замовлення": "Order comment", "Оплата": "Payment", "Оплата при отриманні": "Pay on delivery", "Карткою онлайн (демо)": "Card online (demo)", "Ваше замовлення": "Your order", "Доставка Новою поштою по Україні, 2–4 робочі дні. Вартість доставки — за тарифами перевізника.": "Delivery by Nova Poshta across Ukraine, 2–4 business days. Delivery cost follows the carrier’s rates.", "Підтвердити замовлення": "Confirm order", "Це навчальний проєкт: дані нікуди не надсилаються.": "This is a demo project: no data is sent anywhere.", "Дякуємо за замовлення!": "Thank you for your order!", "Номер замовлення:": "Order number:", "Сума:": "Total:", "Ми зателефонуємо вам, щоб підтвердити замовлення та узгодити відправлення.": "We will call you to confirm the order and arrange shipping.", "Продовжити покупки": "Continue shopping"});
 const TK=[["Вони добре прийнялися б у вашому просторі.","They would settle in well in your space."],["Потрібен догляд","Needs care"],["Знайдено рослин:","Plants found:"],["Знайшли рослин:","Plants found:"],["Середньо","Moderate"],["Півтінь","Part shade"],["Легко","Easy"],["Сонце","Sun"],["Тінь","Shade"],["Разом:","Total:"],["Щодня","Daily"],["до ","up to "]];
 function tr(t){const m=t.match(/^(\s*)([\s\S]*?)(\s*)$/),k=m[2];if(!k)return t;let o=EN[k];if(o===undefined){o=k.replace(/Крок (\d) з (\d)/,"Step $1 of $2");TK.forEach(a=>o=o.split(a[0]).join(a[1]));o=o.replace(/(\d),(\d)/g,"$1.$2").replace(/(\d) м(?![а-яіїєґ])/g,"$1 m")}return m[1]+o+m[3]}
@@ -465,6 +438,56 @@ form.addEventListener("submit",e=>{e.preventDefault();if(!form.reportValidity())
  $("#co-tot").textContent=total()+" ₴";
  $("#co-who").textContent=$("#co-name").value.trim()+" · "+$("#co-tel").value.trim()+" · "+$("#co-city").value.trim();
  G.clear();QTY.clear();refresh();form.reset();fv.hidden=true;ok.hidden=false;co.scrollTop=0;$("#co-okt").focus()});
+})();
+</script>
+<script>
+/* редизайн: пошук, меню, фото простору = перший крок підбору */
+(function(){
+Object.assign(EN,{"Пошук рослини":"Search plants","Ялина звичайна":"Norway spruce","Класична зелена ялина з густою конічною кроною.":"A classic green spruce with a dense conical crown.","Клен червоний «Атропурпуреум»":"Red maple ‘Atropurpureum’","Створимо сад, де захочеться бути":"We’ll create a garden you’ll want to be in","Продаємо рослини, які перетворять вашу ділянку на сад мрії":"We sell plants that turn your plot into a dream garden"});
+$("#q").addEventListener("input",list);
+const ph=()=>{$("#q").placeholder=L=="en"?"Search plants":"Пошук рослини"};ph();
+document.querySelector(".lg").addEventListener("click",ph);
+document.addEventListener("click",e=>{const sp=e.target.closest("[data-sp]");if(sp){const k=sp.dataset.sp;ans=[k=="h"?"g":k];step=1;$("#fq").style.maxWidth="";ask()}});
+const hd=document.querySelector("header"),bg=$("#bg");
+bg.onclick=()=>{bg.setAttribute("aria-expanded",hd.classList.toggle("open"))};
+document.querySelectorAll("nav a,.logo").forEach(a=>a.addEventListener("click",()=>{hd.classList.remove("open");bg.setAttribute("aria-expanded","false")}));
+run();
+})();
+</script>
+<script>
+/* Динаміка: поява блоків, кроки, фінал, акордеон */
+(function(){
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fin=document.querySelector('.fin'),fh=fin&&fin.querySelector('.fin-h');
+  if(fh){var words=fh.textContent.trim().split(/\s+/);fh.setAttribute('aria-label',fh.textContent.trim());fh.innerHTML=words.map(function(w,i){return '<span class="w8" aria-hidden="true" style="--i:'+i+'">'+w+'</span>'}).join(' ')}
+  var steps=document.getElementById('steps'),items=steps?steps.querySelectorAll('.stp'):[];
+  if(still||!('IntersectionObserver' in window)){if(fin)fin.classList.add('in');items.forEach(function(s){s.classList.add('on')});if(steps)steps.style.setProperty('--p',1);return}
+  document.documentElement.classList.add('rvl');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
+  var SEL='main section:not(.fin)>h2,main section>.sub,main section .grid>*,.stp,.ai,.two>.card,#rv>.rv,main section>input,main section>.chips,footer .fg>div';
+  function tag(){
+    var groups=new Map();
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(el.hasAttribute('data-rv'))return;
+      var p=el.parentNode,n=groups.get(p)||0;groups.set(p,n+1);
+      el.setAttribute('data-rv','');el.style.setProperty('--d',Math.min(n,6)*.09+'s');
+      var r=el.getBoundingClientRect();
+      if(r.bottom<0){el.classList.add('in')}else io.observe(el);
+    });
+  }
+  tag();
+  if(fin)io.observe(fin);
+  new MutationObserver(function(){requestAnimationFrame(tag)}).observe(document.querySelector('main'),{childList:true,subtree:true});
+  var tick=false;
+  function prog(){
+    tick=false;if(!steps)return;
+    var r=steps.getBoundingClientRect(),vh=innerHeight,p=(vh*.75-r.top)/(r.height+vh*.2);
+    p=Math.max(0,Math.min(1,p));steps.style.setProperty('--p',p.toFixed(3));
+    var mob=innerWidth<=600,n=items.length;
+    items.forEach(function(s,i){var th=mob?i/(n-1)*.95:i/(n-1)*.98;s.classList.toggle('on',p>=th&&p>0)});
+  }
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(prog)}},{passive:true});
+  addEventListener('resize',prog);prog();
 })();
 </script>
 </body></html>
