@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/hero-poster-1ece85d9.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-photo-04efccb4.webp" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap"></noscript>
 <style>
@@ -38,20 +38,23 @@ h2{font-size:clamp(2rem,4vw,3.25rem);color:var(--g)}h3{font-size:1.375rem;font-w
 a{color:inherit}button{font:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--bord);outline-offset:3px}.hero :focus-visible,header.open :focus-visible{outline-color:#fff}
 .w{max-width:1480px;margin:0 auto;padding:0 40px}
-section{padding:28px 0 0}
+section{padding:120px 0 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--g);color:var(--bg);border:0;border-radius:99px;padding:0 28px;font:600 .95rem var(--sans);text-decoration:none;transition:background .25s}
 .btn:hover{background:var(--g0)}
 .btn.r{background:var(--bord);color:#fff}.btn.r:hover{background:#62202D}
 .btn.o{background:none;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)}.btn.o:hover{background:var(--g);color:var(--bg)}
-.hero .btn.r{background:var(--bg);color:var(--g)}.hero .btn.r:hover{background:#fff}
+.hero .btn.r{background:var(--bg);color:var(--lr)}.hero .btn.r:hover{background:#fff}
 .btn.l{background:none;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85)}.btn.l:hover{background:rgba(255,255,255,.14)}
+/* кнопки на фото: світлі, з червоними літерами (червоний текст прямо на фото не читався б) */
+.hero .btn.l{background:rgba(245,241,233,.9);color:var(--lr);box-shadow:none}
+.hero .btn.l:hover{background:#fff}
 /* header */
 header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:5;pointer-events:none;transition:background .3s,box-shadow .3s}
 header.dk{background:var(--paper);box-shadow:0 8px 30px rgba(23,64,44,.1)}
 .nav{pointer-events:auto;max-width:1480px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:16px}
-.logo{font:900 clamp(2.4rem,6vw,5.5rem)/1 'Playfair Display',Georgia,serif;letter-spacing:-.02em;color:var(--lr);text-decoration:none;margin-right:auto;transition:font-size .3s}
+.logo{font:900 clamp(1.8rem,4.5vw,4.125rem)/1 'Playfair Display',Georgia,serif;letter-spacing:-.02em;color:var(--lr);text-decoration:none;margin-right:auto;transition:font-size .3s}
 .logo i{font-style:normal;color:var(--lg)}
-header.dk .logo{font-size:clamp(2rem,3.4vw,2.8rem)}
+header.dk .logo{font-size:clamp(1.5rem,2.55vw,2.1rem)}
 nav{display:flex;gap:4px}
 nav a{padding:9px 18px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;color:#fff;transition:background .2s;white-space:nowrap}
 nav a:hover,nav a.on{background:rgba(255,255,255,.18)}
@@ -61,7 +64,11 @@ header.dk nav a:hover,header.dk nav a.on{background:rgba(23,64,44,.08)}
 .lg button{background:none;border:0;border-radius:99px;padding:5px 12px;font-weight:700;font-size:.82rem;color:#fff}
 .lg button.on{background:#fff;color:var(--g)}
 header.dk .lg{box-shadow:inset 0 0 0 1.5px var(--ln)}header.dk .lg button{color:var(--ink)}header.dk .lg button.on{background:var(--g);color:#fff}
-.gb{background:var(--lr);color:#fff;border:0;border-radius:99px;padding:0 20px;min-height:44px;font-weight:700}
+/* кошик — прозора кнопка з контуром, як перемикач мови поруч */
+.gb{background:none;color:#fff;border:0;border-radius:99px;padding:0 20px;min-height:44px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6);transition:background .2s}
+.gb:hover{background:rgba(255,255,255,.14)}
+header.dk .gb{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ln)}
+header.dk .gb:hover{background:rgba(23,64,44,.08)}
 
 .bg{display:none;width:44px;height:44px;border:0;background:none;color:#fff;position:relative}
 .bg span,.bg span::before{content:"";position:absolute;left:11px;width:22px;height:2px;background:currentColor;transition:transform .25s}
@@ -70,26 +77,23 @@ header.dk .bg{color:var(--ink)}
 header.open .bg span{transform:rotate(45deg)}header.open .bg span::before{transform:translateY(7px) rotate(-90deg)}
 /* hero */
 @supports(height:100svh){:root{--vh:100svh}} /* висота hero до запуску JS = висоті першого екрана на телефоні, щоб не було стрибка при завантаженні */
-#scroll-container{position:relative;height:calc(var(--vh,100vh)*2)}
+#scroll-container{position:relative;height:var(--vh,100vh)}
 .hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);background:var(--g0);color:#fff;overflow:hidden}
-#scroll-container .hero{position:sticky;top:0;height:var(--vh,100vh)}
-.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-/* У файлі відео вшиті чорні смуги (по 28 px зверху й знизу з 720). Блок відео вищий на 720/664 і зсунутий угору на 28/664, тож смуги виходять за межі .hero (overflow:hidden). Постер — перший кадр без смуг (1280×664), тому перехід постер→відео без стрибка. Відео з’являється плавно, коли справді почало грати. */
-.hero video{height:calc(100%*720/664);top:calc(-100%*28/664);bottom:auto;opacity:0;transition:opacity .4s ease}
-.hero video.on{opacity:1}
-.hs{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,42,29,.68),rgba(15,42,29,.08) 65%),linear-gradient(180deg,rgba(15,42,29,.5),transparent 28%,rgba(15,42,29,.5))}
+#scroll-container .hero{position:relative;height:100%}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hs{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,42,29,.62),rgba(15,42,29,.30) 38%,transparent 62%),linear-gradient(90deg,rgba(15,42,29,.26),transparent 54%),linear-gradient(180deg,rgba(15,42,29,.45),transparent 22%)}
+/* легкий шар на фото + м’яка тінь під білим текстом, щоб фото лишалось яскравим, а текст — читабельним */
+.hero h1,.hero .ha p{text-shadow:0 2px 20px rgba(15,42,29,.45)}
+header:not(.dk):not(.open) nav a:not([data-p=catalog]){text-shadow:0 1px 10px rgba(15,42,29,.55)}
 .hc{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:120px max(40px,calc(50vw - 700px)) 72px;will-change:transform,opacity}
 .hero h1{font-size:clamp(2.75rem,6.4vw,5.25rem);line-height:1.02;max-width:18ch;text-wrap:balance;margin:0;color:#fff}
 .ha{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
 .hero .ha p{margin:0;color:#fff;max-width:46ch;font-size:1.125rem}
 .hero .ha p:first-child{display:flex;gap:12px;flex-wrap:wrap}.hero .ha p:last-child{order:-1}
-#hero-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px;opacity:0;pointer-events:none;will-change:opacity,transform}
-.hero-overlay-label{font:500 clamp(2.25rem,5vw,4rem)/1.05 var(--serif);color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.4)}
-@media(prefers-reduced-motion:reduce){#scroll-container{height:auto}#scroll-container .hero{position:relative;height:auto;min-height:90svh}.hero video,#hero-overlay{display:none}}
 /* page titles */
 .pg:not(#home)>section:first-child{padding-top:0}
 .pg:not(#home)>section:first-child>h2:first-child{background:var(--sand);box-shadow:0 0 0 100vmax var(--sand);clip-path:inset(0 -100vmax);padding:75px 0 28px;margin:0 0 28px}
-.pg:not(#home){margin-top:28px}
+.pg:not(#home){margin-top:120px}
 .sub{font:600 clamp(1.5rem,2.4vw,2rem)/1.2 var(--serif);margin:-8px 0 32px}
 .more{margin:28px 0 0;text-align:center}
 /* product grid + cards */
@@ -131,28 +135,28 @@ header.open .bg span{transform:rotate(45deg)}header.open .bg span::before{transf
 .sp .t{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px;display:flex;flex-direction:column;gap:4px}
 .sp b{font:500 1.7rem/1.1 var(--serif)}.sp small{font-size:.9rem}
 /* finder */
-#finder .q{max-width:none;background:var(--paper);border:1px solid var(--ln);border-radius:20px;padding:64px}
+#finder .q{max-width:none;background:var(--paper);border:1px solid var(--ln);border-radius:0;padding:64px}
 #fq .st{font:600 .9rem var(--sans);color:var(--bord)}
 #fq h3{font:500 clamp(2rem,3.6vw,3rem)/1.1 var(--serif);margin:12px 0 0}
 .bar{height:6px;background:var(--sage);border-radius:9px;margin-bottom:28px}.bar i{display:block;height:100%;background:var(--g);border-radius:9px;transition:width .3s}
 #fq .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
-#fq .chip{border:1px solid var(--ln);background:var(--bg);border-radius:14px;padding:22px 20px;font:500 1.05rem var(--sans);text-align:left;color:var(--ink);transition:background .2s,color .2s}
+#fq .chip{border:1px solid var(--ln);background:var(--bg);border-radius:0;padding:22px 20px;font:500 1.05rem var(--sans);text-align:left;color:var(--ink);transition:background .2s,color .2s}
 #fq .chip:hover{background:var(--g);color:#fff;border-color:var(--g)}
 #fq .grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin:32px 0}
 /* guide + reviews */
 #arts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-#arts .card,.two .card{background:var(--paper);border:1px solid var(--ln);border-radius:12px}
+#arts .card,.two .card{background:var(--paper);border:1px solid var(--ln);border-radius:0}
 #arts .card .b,.two .card .b{display:flex;flex-direction:column;gap:12px;padding:32px}
 #arts .card h3,.two .card h3{font-size:1.6rem}#arts .card p,.two .card p{margin:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .two .card:first-child{background:var(--g);border-color:var(--g);color:#EAF2EA}
-#guide>section+section,#reviews>section+section{padding-top:28px}
+#guide>section+section,#reviews>section+section{padding-top:120px}
 #rv{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.rv{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--paper);border:1px solid var(--ln);border-radius:12px}
+.rv{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--paper);border:1px solid var(--ln);border-radius:0}
 .rv .stars{color:var(--bord);letter-spacing:.12em}
 .rv p{margin:0}.rv .who{margin-top:auto;display:flex;flex-direction:column;font-size:.9rem}.rv .who small{color:var(--mut)}
 /* cart + checkout */
-#gp{position:fixed;right:24px;top:calc(84px + env(safe-area-inset-top,0px));width:min(360px,calc(100% - 32px));max-height:calc(100vh - 110px);overflow-y:auto;background:var(--paper);border:1px solid var(--ln);border-radius:16px;padding:22px;z-index:6;display:none;box-shadow:0 16px 40px rgba(23,64,44,.16)}
+#gp{position:fixed;right:24px;top:calc(84px + env(safe-area-inset-top,0px));width:min(360px,calc(100% - 32px));max-height:calc(100vh - 110px);overflow-y:auto;background:var(--paper);border:1px solid var(--ln);border-radius:0;padding:22px;z-index:6;display:none;box-shadow:0 16px 40px rgba(23,64,44,.16)}
 .gh{font:600 1.5rem var(--serif);margin:0 0 .5em}
 #gp ul{padding:0;list-style:none;margin:8px 0}#gp li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0}
 #gp li>span:first-child{flex:1;min-width:0}#gp .lp{white-space:nowrap;min-width:4.5em;text-align:right}
@@ -161,17 +165,17 @@ header.open .bg span{transform:rotate(45deg)}header.open .bg span::before{transf
 .qt button{width:26px;height:26px;border-radius:50%;border:0;background:var(--sage);color:var(--g);font:700 1rem/1 var(--sans);padding:0 0 2px}.qt button:hover{background:var(--g);color:#fff}.qt b{min-width:1.2em;text-align:center}
 #co{position:fixed;inset:0;z-index:20;display:flex;overflow-y:auto;padding:24px 16px}
 .co-bd{position:fixed;inset:0;background:rgba(15,42,29,.62)}
-.co-box{position:relative;background:var(--paper);border-radius:18px;width:min(920px,100%);margin:auto;padding:40px}
+.co-box{position:relative;background:var(--paper);border-radius:0;width:min(920px,100%);margin:auto;padding:40px}
 .co-x{position:absolute;top:14px;right:16px;width:44px;height:44px;border:0;border-radius:50%;background:var(--sage);color:var(--g);font:700 1.5rem/1 var(--sans);padding:0 0 3px}.co-x:hover{background:var(--g);color:#fff}
 .co-box h3{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 48px 0 0}
 .co-box h4{font:600 .95rem var(--sans);color:var(--bord);margin:0 0 14px}
 .co-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-top:24px;align-items:start}
 #cof label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem;margin-bottom:14px}
-#cof input[type=text],#cof input[type=tel],#cof textarea{font:400 1rem var(--sans);padding:13px 16px;border:1px solid var(--ln);border-radius:10px;background:#fff;color:var(--ink);width:100%;resize:vertical}
+#cof input[type=text],#cof input[type=tel],#cof textarea{font:400 1rem var(--sans);padding:13px 16px;border:1px solid var(--ln);border-radius:0;background:#fff;color:var(--ink);width:100%;resize:vertical}
 #cof input:user-invalid{border-color:var(--bord)}#cof h4:nth-of-type(2){margin-top:10px}
 .co-pay{display:flex;flex-direction:column}#cof .co-pay label{flex-direction:row;align-items:center;gap:10px;font-weight:500;margin-bottom:8px}
 #cof .co-pay input{accent-color:var(--g);width:18px;height:18px;margin:0}
-.co-sum{background:var(--sand);border-radius:14px;padding:24px}
+.co-sum{background:var(--sand);border-radius:0;padding:24px}
 .co-sum ul{list-style:none;margin:0;padding:0}.co-sum li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(31,42,35,.12)}
 .co-sum li em{font-style:normal;color:var(--mut)}.co-sum li b{white-space:nowrap}
 .cot{display:flex;justify-content:space-between;font-weight:800;font-size:1.2rem;padding:14px 0 8px}.cot b{color:var(--bord)}
@@ -188,10 +192,10 @@ footer .fb{margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,25
 /* responsive */
 @media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr);gap:24px 20px}#arts{grid-template-columns:1fr 1fr}#rv{grid-template-columns:1fr 1fr}.nav{padding:12px 24px}.w{padding:0 24px}.hc{padding-inline:24px}}
 @media(max-width:900px){.sp-grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.co-grid{grid-template-columns:1fr}footer .fg{grid-template-columns:1fr 1fr}footer .fg>div:first-child{grid-column:1/-1}}
-/* Компактна шапка (бургер) тепер вмикається до 1280px: на планшетах повний ряд меню не вміщувався й виштовхував мову та «Мій сад» за екран. Шрифти й розміри не змінено. */
+/* Компактна шапка (бургер) тепер вмикається до 1280px: на планшетах повний ряд меню не вміщувався й виштовхував мову та кошик за екран. Шрифти й розміри не змінено. */
 @media(max-width:1280px){.bg{display:block;order:4}.lg{order:2}.gb{order:3}nav{display:none}header.open nav{display:flex;position:fixed;inset:0;z-index:-1;background:var(--g0);flex-direction:column;justify-content:center;align-items:flex-start;padding:0 32px;gap:6px}header.open nav a{font:500 2.25rem/1.2 var(--serif);padding:8px 0;color:#fff}header.open nav a.on{background:none;color:#E39AA8}header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb,header.open .lg{visibility:hidden}}
 @media(max-width:760px){
-section{padding-top:32px}.pg:not(#home){margin-top:32px}footer{margin-top:32px;padding-top:48px}
+section{padding-top:72px}.pg:not(#home){margin-top:72px}footer{margin-top:32px;padding-top:48px}
 .w{padding:0 20px}.hc{padding:120px 20px 48px}.nav{padding:10px 16px;gap:8px}
 .bg{display:block;order:4}.lg{order:2}.gb{order:3;padding:0 14px;font-size:.88rem}
 nav{display:none}header.open nav{display:flex;position:fixed;inset:0;z-index:-1;background:var(--g0);flex-direction:column;justify-content:center;align-items:flex-start;padding:0 32px;gap:6px}
@@ -208,7 +212,7 @@ header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb
 #q{max-width:none}
 #finder .q{padding:32px 20px}#fq .grid{grid-template-columns:1fr 1fr;gap:36px 14px}
 #arts,#rv{grid-template-columns:1fr;gap:16px}.two{gap:16px}
-#gp{top:auto;bottom:0;left:0;right:0;width:auto;border-radius:18px 18px 0 0;max-height:70vh}
+#gp{top:auto;bottom:0;left:0;right:0;width:auto;border-radius:0;max-height:70vh}
 #co{padding:0}.co-box{border-radius:0;min-height:100%;padding:28px 20px}
 }
 /* Поява блоків при прокручуванні */
@@ -242,9 +246,9 @@ header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb
 .ai.op .ap{grid-template-rows:1fr}
 .ai.op .ap p{opacity:1;transform:none;transition-delay:.12s}
 /* Фінал */
-.fin{margin-top:72px;padding:0 0 32px;background:var(--g0);position:relative;overflow:hidden;color:var(--bg)}
+.fin{margin-top:120px;padding:0 0 32px;background:var(--g0);position:relative;overflow:hidden;color:var(--bg)}
 .fin .fg,.fin .fb{position:relative}.fin .fg{padding-top:64px;border-top:1px solid rgba(255,255,255,.14);max-width:1200px}.fin .btn:hover{text-decoration:none}
-.fin::before{content:"";position:absolute;inset:-40% -20%;background:radial-gradient(closest-side,rgba(123,42,58,.55),transparent 70%) 20% 30%/60% 60% no-repeat,radial-gradient(closest-side,rgba(29,91,58,.7),transparent 70%) 80% 70%/60% 60% no-repeat;animation:glow 14s ease-in-out infinite alternate;pointer-events:none}
+.fin::before{content:"";position:absolute;inset:-40% -20%;background:radial-gradient(closest-side,rgba(29,91,58,.7),transparent 70%) 20% 30%/60% 60% no-repeat,radial-gradient(closest-side,rgba(29,91,58,.7),transparent 70%) 80% 70%/60% 60% no-repeat;animation:glow 14s ease-in-out infinite alternate;pointer-events:none}
 @keyframes glow{to{transform:translate3d(6%,-4%,0) rotate(8deg)}}
  .fin-in{position:relative;padding:112px 20px 48px;text-align:center;max-width:860px;margin:0 auto}
 .fin-k{margin:0 0 20px;font:600 .8rem var(--sans);letter-spacing:.4em;color:rgba(245,241,233,.6)}
@@ -261,20 +265,27 @@ header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb
 @media(max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:36px 24px}.steps::before,.steps::after{display:none}}
 @media(max-width:600px){.steps{grid-template-columns:1fr;gap:28px;padding-left:76px}.steps::before,.steps::after{display:block;left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}.steps::after{transform-origin:top;transform:scaleY(var(--p))}.sn{position:absolute;left:-76px;top:0}.stp h3{margin-top:10px}.fin-in{padding:72px 20px 32px}.ap p{padding-right:8px}}
 @media(prefers-reduced-motion:reduce){.rvl [data-rv],.fin-h .w8,.fin-p,.fin-b,.fin-k{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.fin::before{animation:none}.ap,.ap p,.pm,.pm::after{transition:none}}
+/* «Каталог» у меню — червона кнопка */
+header nav a[data-p=catalog]{background:var(--lr);color:#fff}
+header nav a[data-p=catalog]:hover,header nav a[data-p=catalog].on,header.dk nav a[data-p=catalog],header.dk nav a[data-p=catalog]:hover,header.dk nav a[data-p=catalog].on{background:var(--lr);color:#fff}
+header nav a[data-p=catalog]:hover,header.dk nav a[data-p=catalog]:hover{background:#8C1414}
+header.open nav a[data-p=catalog],header.open nav a[data-p=catalog].on{padding:8px 24px;background:var(--lr);color:#fff}
+/* відстані між секціями: 120px на комп’ютері й планшеті, 72px на телефоні (правило стоїть останнім, щоб перебити базові) */
+@media(max-width:760px){section{padding-top:72px}.pg:not(#home){margin-top:72px}.fin{margin-top:72px}}
 </style>
 </head><body>
 <header><div class="nav"><a class="logo" href="#home">VERD<i>E</i></a>
 <nav><a href="#home" data-p="home">Головна</a><a href="#finder" data-p="finder">Підбір рослин</a><a href="#catalog" data-p="catalog">Каталог</a><a href="#guide" data-p="guide">Гід і доставка</a><a href="#reviews" data-p="reviews">Відгуки</a></nav>
 <div class="lg" role="group" aria-label="Мова / Language"><button data-l="uk" class="on" aria-pressed="true">UA</button><button data-l="en" aria-pressed="false">EN</button></div>
-<button class="gb" id="gbtn">Мій сад: <span id="gc">0</span></button><button class="bg" id="bg" type="button" aria-label="Меню" aria-expanded="false"><span></span></button></div></header>
-<div id="gp"><p class="gh">Мій сад</p><ul id="gl"></ul><div id="gt"></div><button class="btn r" id="gco" type="button" hidden>Оформити замовлення</button></div>
+<button class="gb" id="gbtn" aria-label="Кошик"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span id="gc">0</span></button><button class="bg" id="bg" type="button" aria-label="Меню" aria-expanded="false"><span></span></button></div></header>
+<div id="gp"><p class="gh">Кошик</p><ul id="gl"></ul><div id="gt"></div><button class="btn r" id="gco" type="button" hidden>Оформити замовлення</button></div>
 <main class="w">
 <noscript><p style="padding:96px 20px 20px;max-width:640px">Для роботи каталогу, підбору рослин і кошика потрібен увімкнений JavaScript.</p></noscript>
 <div class="pg" id="home">
-<div id="scroll-container"><div class="hero" id="hero"><img src="assets/hero-poster-1ece85d9.webp" alt="Затишний будинок у саду з гортензіями" width="1280" height="664" fetchpriority="high" decoding="async"><video id="bg-video" muted loop playsinline preload="none" aria-hidden="true" width="1280" height="720" poster="assets/hero-poster-1ece85d9.webp" data-src="assets/hero-video-loop-7c3a1e52.mp4"></video><div class="hs"></div><div class="hc"><h1>Створимо сад, де захочеться бути</h1><div class="ha"><p><a class="btn r" href="#finder">Підібрати рослини</a><a class="btn l" href="#catalog">Дивитись каталог</a></p><p>Продаємо рослини, які перетворять вашу ділянку на сад мрії</p></div></div><div id="heroart" hidden></div><div id="hero-overlay"></div></div></div>
+<div id="scroll-container"><div class="hero" id="hero"><img src="assets/hero-photo-04efccb4.webp" alt="Затишний будинок у саду з гортензіями" width="1376" height="768" fetchpriority="high" decoding="async"><div class="hs"></div><div class="hc"><h1>Створимо сад, де захочеться бути</h1><div class="ha"><p><a class="btn r" href="#finder">Підібрати рослини</a><a class="btn l" href="#catalog">Дивитись каталог</a></p><p>Продаємо рослини, які перетворять<br>вашу ділянку на сад мрії</p></div></div><div id="heroart" hidden></div></div></div>
 <section><h2>Підбір рослин для вашого простору</h2><p class="sub">Де ви садитимете?</p><div class="grid" id="spaces"></div></section>
 <section class="hw" aria-labelledby="hw-t"><h2 id="hw-t">Як це працює</h2><p class="sub">Від ідеї до саду — чотири кроки</p>
-<ol class="steps" id="steps"><li class="stp"><span class="sn" aria-hidden="true">01</span><h3>Підбір</h3><p>Відповідаєте на кілька питань про ділянку, світло й ґрунт — ми пропонуємо рослини, що приживуться.</p></li><li class="stp"><span class="sn" aria-hidden="true">02</span><h3>Замовлення</h3><p>Додаєте рослини в «Мій сад» і оформлюєте замовлення за хвилину.</p></li><li class="stp"><span class="sn" aria-hidden="true">03</span><h3>Пакування</h3><p>Пакуємо в захисні короби із закритим кореневим комом, щоб рослина не відчула дороги.</p></li><li class="stp"><span class="sn" aria-hidden="true">04</span><h3>Посадка</h3><p>Отримуєте за 2–4 дні з інструкцією з посадки та догляду.</p></li></ol></section>
+<ol class="steps" id="steps"><li class="stp"><span class="sn" aria-hidden="true">01</span><h3>Підбір</h3><p>Відповідаєте на кілька питань про ділянку, світло й ґрунт — ми пропонуємо рослини, що приживуться.</p></li><li class="stp"><span class="sn" aria-hidden="true">02</span><h3>Замовлення</h3><p>Додаєте рослини в кошик і оформлюєте замовлення за хвилину.</p></li><li class="stp"><span class="sn" aria-hidden="true">03</span><h3>Пакування</h3><p>Пакуємо в захисні короби із закритим кореневим комом, щоб рослина не відчула дороги.</p></li><li class="stp"><span class="sn" aria-hidden="true">04</span><h3>Посадка</h3><p>Отримуєте за 2–4 дні з інструкцією з посадки та догляду.</p></li></ol></section>
 </div>
 <div class="pg" id="finder"><section><h2>Підбір рослин для вашого простору</h2><div class="q" id="fq"></div></section></div>
 <div class="pg" id="catalog"><section><h2>Каталог рослин</h2><input type="search" id="q" placeholder="Пошук рослини" aria-label="Пошук рослини"><div class="chips" id="cc"></div><div class="chips" id="cs"></div><p id="cn" style="color:var(--mut)"></p><div class="grid" id="cg"></div></section></div>
@@ -296,7 +307,7 @@ header.open .logo,header.open .logo i,header.open .bg{color:#fff}header.open .gb
 <div id="co-ok" hidden><h3 tabindex="-1" id="co-okt">Дякуємо за замовлення!</h3><p class="coN"><span>Номер замовлення:</span> <b id="co-no"></b></p><p class="coN"><span>Сума:</span> <b id="co-tot"></b></p><p class="coN" id="co-who"></p><p>Ми зателефонуємо вам, щоб підтвердити замовлення та узгодити відправлення.</p><button class="btn" type="button" id="co-more">Продовжити покупки</button></div>
 </div></div>
 </main>
-<footer class="fin" aria-labelledby="fin-t"><div class="fin-in"><p class="fin-k">VERDE</p><h2 id="fin-t" class="fin-h">Ваш сад починається з першої рослини</h2><p class="fin-p">Підберемо рослини під ваше світло, ґрунт і настрій — і привеземо їх живими та здоровими.</p></div><div class="w fg"><div><b class="fl">VERDE</b><p>Рослини для життя на свіжому повітрі: хвойні, троянди, півонії, кущі й дерева.</p></div><div><h4>Контакти</h4><p><a href="tel:+380440000000">+38 (044) 000-00-00</a><br><a href="mailto:hello@verde.example">hello@verde.example</a></p></div><div><h4>Адреса</h4><p>м. Київ, вул. Садова, 12<br>Щодня 9:00–19:00</p></div><div><h4>Соцмережі</h4><p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><br><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a><br><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a></p></div></div><div class="w fb">Навчальний портфоліо-проєкт. Ціни умовні.</div></footer>
+<footer class="fin" aria-labelledby="fin-t"><div class="fin-in"><h2 id="fin-t" class="fin-h">Ваш сад починається з першої рослини</h2><p class="fin-p">Підберемо рослини під ваше світло, ґрунт і настрій — і привеземо їх живими та здоровими.</p></div><div class="w fg"><div><b class="fl">VERDE</b><p>Рослини для життя на свіжому повітрі: хвойні, троянди, півонії, кущі й дерева.</p></div><div><h4>Контакти</h4><p><a href="tel:+380440000000">+38 (044) 000-00-00</a><br><a href="mailto:hello@verde.example">hello@verde.example</a></p></div><div><h4>Адреса</h4><p>м. Київ, вул. Садова, 12<br>Щодня 9:00–19:00</p></div><div><h4>Соцмережі</h4><p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><br><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a><br><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a></p></div></div><div class="w fb">Навчальний портфоліо-проєкт. Ціни умовні.</div></footer>
 <script>const IMG={t2:"assets/img-fig-t2.webp",j11:"assets/img-fig-j11.webp",p4:"assets/img-baca45cb.webp",p5:"assets/img-2be5d8dc.webp",i5:"assets/img-39019de8.webp",i7:"assets/img-fig-i7.webp",i8:"assets/img-f77bb157.webp?v=2",i9:"assets/img-fig-i9.webp",i10:"assets/img-fig-i10.webp",i11:"assets/img-ccd597ab.webp",n6:"assets/img-d2c27d89.webp",n7:"assets/img-c94e033d.webp",n8:"assets/img-b02e64e5.webp",n13:"assets/img-b72f77f3.webp",n14:"assets/img-bda2439f.webp",n15:"assets/img-e732293e.webp",n16:"assets/img-38bafc45.webp?v=2",n17:"assets/img-7b3e80df.webp",n18:"assets/img-aae344a5.webp?v=2",n19:"assets/img-fig-n19.webp"};</script>
 <script>
 const P=[
@@ -331,7 +342,7 @@ else if(t=="кущі")s+=[[36,48,20],[62,46,22],[50,34,22]].map(a=>`<circle cx="
 else s+=`<rect x="47" y="44" width="6" height="30" fill="#6b4a3a"/>`+[[50,28,24],[34,38,14],[66,38,14]].map(a=>`<circle cx="${a[0]}" cy="${a[1]}" r="${a[2]}" fill="${c}"/>`).join("")+`<circle cx="50" cy="26" r="10" fill="${g}" opacity=".35"/>`;
 return s+'</svg>'}
 const G=new Set(JSON.parse("[]"));
-function card(i){const p=P[i];return `<div class="card"><div class="im">${PH[i]?`<img src="${IMG[PH[i]]}" alt="${p[0]}" width="480" height="600" loading="lazy" decoding="async">`:art(p)}</div><div class="b"><span class="tag">${p[1]}</span><h3>${p[0]}</h3><small>${[...p[2]].map(x=>SUN[x]).join(" / ")} · ${CARE[p[3]]} · ${p[6]}</small><small>${p[9]}</small><div class="pr">${p[5]} ₴</div><button class="add ${G.has(i)?"in":""}" data-i="${i}">${G.has(i)?"У саду ✓":"Додати в сад"}</button></div></div>`}
+function card(i){const p=P[i];return `<div class="card"><div class="im">${PH[i]?`<img src="${IMG[PH[i]]}" alt="${p[0]}" width="480" height="600" loading="lazy" decoding="async">`:art(p)}</div><div class="b"><span class="tag">${p[1]}</span><h3>${p[0]}</h3><small>${[...p[2]].map(x=>SUN[x]).join(" / ")} · ${CARE[p[3]]} · ${p[6]}</small><small>${p[9]}</small><div class="pr">${p[5]} ₴</div><button class="add ${G.has(i)?"in":""}" data-i="${i}">${G.has(i)?"У кошику ✓":"Додати в кошик"}</button></div></div>`}
 let cat="усі",sun="будь-яке";
 function cats(){$("#cc").innerHTML=["усі","хвойні","квіти","кущі","дерева"].map(c=>`<button class="chip ${c==cat?"on":""}" data-c="${c}">${c[0].toUpperCase()+c.slice(1)}</button>`).join("");
 $("#cs").innerHTML=["будь-яке","Сонце","Півтінь","Тінь"].map(c=>`<button class="chip ${c==sun?"on":""}" data-s="${c}">${c=="будь-яке"?"Освітлення: будь-яке":c}</button>`).join("")}
@@ -363,39 +374,10 @@ addEventListener("scroll",spy,{passive:true});
 document.querySelectorAll("nav a,.logo").forEach(a=>a.addEventListener("click",()=>{$("#gp").style.display="none"}));
 refresh();ask();spy();
 
-/* ---- scroll-анімація hero ---- */
-(function(){
-  function setVh(){const h=window.visualViewport?window.visualViewport.height:window.innerHeight;document.documentElement.style.setProperty('--vh',h+'px')}
-  setVh();let rt;const rs=()=>{clearTimeout(rt);rt=setTimeout(()=>{setVh();lastP=-1},150)};
-  addEventListener('resize',rs);if(window.visualViewport)visualViewport.addEventListener('resize',rs);
-
-  const content=document.querySelector('#scroll-container .hc'),
-        overlay=document.getElementById('hero-overlay'),box=document.getElementById('scroll-container');
-  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(still)return;
-
-  let lastP=-1,smooth=0;
-  const ez=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-  function apply(p){
-    const i=ez(Math.max(0,Math.min(1,(p-.35)/.15))),o=ez(Math.max(0,Math.min(1,(p-.55)/.12)));
-    overlay.style.opacity=(i*(1-o)).toFixed(3);
-    overlay.style.transform='translateY('+((1-i)*30+o*-30)+'px)';
-  }
-  function tick(){
-    requestAnimationFrame(tick);
-    const track=box.offsetHeight-window.innerHeight;if(track<=0)return;
-    const top=box.getBoundingClientRect().top;
-    const target=Math.max(0,Math.min(1,-top/track));
-    smooth+=(target-smooth)*.14;if(Math.abs(target-smooth)<.0005)smooth=target;
-    if(Math.abs(smooth-lastP)<.0003)return;
-    lastP=smooth;apply(smooth);
-  }
-  tick();
-})();
 </script>
 <script>
 /* мова UA / EN */
-const EN={"Головна":"Home","Каталог":"Catalog","Підбір рослин":"Plant finder","Гід і доставка":"Guide & delivery","Мій сад:":"My garden:","Мій сад":"My garden","Створимо сад, де захочеться бути":"A garden where you’ll want to be","Продаємо рослини, які перетворять вашу ділянку на сад мрії":"We sell plants that turn your plot into a dream garden","Зробіть місце, де хочеться бути":"Make a place where you want to be","Підібрати рослини":"Find plants","Дивитись каталог":"Browse the catalog","Хвойні, троянди, півонії, кущі та дерева з українських розплідників. Підберемо рослини під сонце, ґрунт і ваш час на догляд.":"Conifers, roses, peonies, shrubs and trees from Ukrainian nurseries. We match plants to your sun, soil and the time you have to care for them.","Від ідеї до саду":"From idea to garden","Рослини, що":"Plants that","приживаються":"take root","надовго":"for good","Обирайте за простором":"Choose by space","Сад":"Garden","Доріжки, арки й шари кольору":"Paths, arches and layers of colour","Тераса і балкон":"Terrace & balcony","Квіти у вазонах біля місця відпочинку":"Potted flowers by your seating area","Подвір’я біля входу":"Front yard","Гарне перше враження":"A great first impression","Уздовж огорожі":"Along the fence","Гортензії й кущі, що цвітуть до осені":"Hydrangeas and shrubs that bloom until autumn","Каталог рослин":"Plant catalog","Усі":"All","Хвойні":"Conifers","Квіти":"Flowers","Кущі":"Shrubs","Дерева":"Trees","хвойні":"conifers","квіти":"flowers","кущі":"shrubs","дерева":"trees","Освітлення: будь-яке":"Light: any","Додати в сад":"Add to garden","У саду ✓":"In garden ✓","Нічого не знайдено — змініть фільтри.":"Nothing found — change the filters.","Поки порожньо. Додайте рослини з каталогу.":"Empty for now. Add plants from the catalog.",
+const EN={"Головна":"Home","Каталог":"Catalog","Підбір рослин":"Plant finder","Гід і доставка":"Guide & delivery","Кошик":"Cart","Створимо сад, де захочеться бути":"A garden where you’ll want to be","Продаємо рослини, які перетворять":"We sell plants that turn","вашу ділянку на сад мрії":"your plot into a dream garden","Зробіть місце, де хочеться бути":"Make a place where you want to be","Підібрати рослини":"Find plants","Дивитись каталог":"Browse the catalog","Хвойні, троянди, півонії, кущі та дерева з українських розплідників. Підберемо рослини під сонце, ґрунт і ваш час на догляд.":"Conifers, roses, peonies, shrubs and trees from Ukrainian nurseries. We match plants to your sun, soil and the time you have to care for them.","Від ідеї до саду":"From idea to garden","Рослини, що":"Plants that","приживаються":"take root","надовго":"for good","Обирайте за простором":"Choose by space","Сад":"Garden","Доріжки, арки й шари кольору":"Paths, arches and layers of colour","Тераса і балкон":"Terrace & balcony","Квіти у вазонах біля місця відпочинку":"Potted flowers by your seating area","Подвір’я біля входу":"Front yard","Гарне перше враження":"A great first impression","Уздовж огорожі":"Along the fence","Гортензії й кущі, що цвітуть до осені":"Hydrangeas and shrubs that bloom until autumn","Каталог рослин":"Plant catalog","Усі":"All","Хвойні":"Conifers","Квіти":"Flowers","Кущі":"Shrubs","Дерева":"Trees","хвойні":"conifers","квіти":"flowers","кущі":"shrubs","дерева":"trees","Освітлення: будь-яке":"Light: any","Додати в кошик":"Add to cart","У кошику ✓":"In cart ✓","Нічого не знайдено — змініть фільтри.":"Nothing found — change the filters.","Поки порожньо. Додайте рослини з каталогу.":"Empty for now. Add plants from the catalog.",
 "Туя «Смарагд»":"Thuja ‘Smaragd’","Вузька жива огорожа, що тримає форму цілий рік.":"A narrow living hedge that holds its shape all year.","Ялівець «Блю Стар»":"Juniper ‘Blue Star’","Сріблясто-блакитна подушка для альпійської гірки.":"A silvery-blue cushion for a rock garden.","Ялина колюча «Глаука»":"Blue spruce ‘Glauca’","Сизі гілки — акцент біля входу.":"Blue-grey branches — an accent by the entrance.","Сосна звичайна":"Scots pine","Формована крона й мінімум догляду. Чудово виглядає на терасі.":"Shaped crown and minimal care. Looks great on a terrace.","Троянда «Ред Наомі»":"Rose ‘Red Naomi’","Класичні червоні бутони з довгим цвітінням.":"Classic red buds with long blooming.","Півонія «Сара Бернар»":"Peony ‘Sarah Bernhardt’","Великі рожеві квіти з ніжним ароматом.":"Large pink flowers with a delicate scent.","Лаванда «Гідкот»":"Lavender ‘Hidcote’","Аромат, бджоли й мінімум догляду.":"Fragrance, bees and minimal care.","Ехінацея «Магнус»":"Echinacea ‘Magnus’","Рожеві ромашки до самих заморозків.":"Pink daisies right up to the frosts.","Хоста «Френсіс Вільямс»":"Hosta ‘Frances Williams’","Великі сизо-зелені листки для тіні.":"Big blue-green leaves for shade.","Гортензія волотиста":"Panicle hydrangea","Кремово-рожеві суцвіття-конуси з липня до осені.":"Cream-pink cone blooms from July to autumn.","Барбарис Тунберга «Атропурпуреа»":"Japanese barberry ‘Atropurpurea’","Бордове листя, що червоніє восени.":"Burgundy leaves that turn red in autumn.","Спірея «Шіробана»":"Spirea ‘Shirobana’","Рожево-білі щитки квітів усе літо.":"Pink-and-white flower clusters all summer.","Вейгела «Нана Пурпуреа»":"Weigela ‘Nana Purpurea’","Темне листя й рожеві дзвіночки навесні.":"Dark leaves and pink bells in spring.","Клен японський «Атропурпуреум»":"Japanese maple ‘Atropurpureum’","Філігранне червоне листя для півтіні.":"Delicate red foliage for part shade.","Магнолія «Сузан»":"Magnolia ‘Susan’","Рожево-білі тюльпани-квіти ще до листя.":"Pink-white tulip-shaped flowers before the leaves.","Горобина звичайна":"Rowan","Червоні грона ягід прикрашають осінь.":"Red berry clusters decorate the autumn.","Яблуня декоративна «Роялті»":"Ornamental crabapple ‘Royalty’","Малинове цвітіння і темно-червоні плоди.":"Crimson blossom and dark red fruit.","Троянда кущова червона":"Red shrub rose","Високий кущ, густо вкритий червоними квітами. Ефектний біля ґанку.":"A tall shrub densely covered in red flowers. Striking by the porch.","Камелія японська на штамбі":"Japanese camellia on a stem","Куляста крона з рожевими квітами. Для великого вазона, на зиму — у світле приміщення.":"A round crown with pink flowers. For a large pot; bring it into a bright room for winter.","Півонія жовта":"Yellow peony","Кремово-жовті махрові квіти з теплою серединкою. Цвіте в червні.":"Creamy-yellow double flowers with a warm centre. Blooms in June.",
 "Весна":"Spring","Літо":"Summer","Осінь":"Autumn","Зима":"Winter","Троянди, багаторічники, кущі, плодові дерева":"Roses, perennials, shrubs, fruit trees","Рослини в контейнерах, пряні трави, балконні квіти":"Container plants, herbs, balcony flowers","Хвойні, дерева, кущі, цибулини півоній і тюльпанів":"Conifers, trees, shrubs, peony and tulip bulbs","Планування саду, підготовка ділянки":"Garden planning, plot preparation","Січ":"Jan","Лют":"Feb","Бер":"Mar","Кві":"Apr","Тра":"May","Чер":"Jun","Лип":"Jul","Сер":"Aug","Вер":"Sep","Жов":"Oct","Лис":"Nov","Гру":"Dec","Троянди":"Roses","Півонії":"Peonies","Рослини в контейнерах":"Container plants",
 "Підбір рослин для вашого простору":"Find plants for your space","Де ви садитимете?":"Where will you plant?","Тераса":"Terrace","Балкон":"Balcony","Біля входу":"By the entrance","Скільки сонця на ділянці?":"How much sun does the spot get?","Багато (6+ год)":"A lot (6+ hours)","Здебільшого тінь":"Mostly shade","Скільки часу на догляд?":"How much time for care?","Люблю садівництво":"I love gardening","Трохи можу":"A little","Нехай буде легко":"Keep it easy","Що вам найважливіше?":"What matters most?","Кольорові квіти":"Colourful flowers","Приватність":"Privacy","Просто зелень":"Just greenery","Декоративність":"Decorative look","Ваш добір готовий":"Your selection is ready","Для цих умов нічого не знайшли. Спробуйте змінити відповіді.":"Nothing found for these conditions. Try changing your answers.","Пройти знову":"Start over",
@@ -415,8 +397,6 @@ document.querySelector(".lg").addEventListener("click",e=>{const b=e.target.clos
 run();
 </script>
 <script>
-/* Відео hero вантажиться після повного завантаження сторінки; пропускається при економії трафіку, повільній мережі та prefers-reduced-motion */
-addEventListener('load',function(){var v=document.getElementById('bg-video');if(!v||!v.dataset.src)return;var c=navigator.connection||{};if(matchMedia('(prefers-reduced-motion: reduce)').matches||c.saveData||/(^|-)(2g|3g)$/.test(c.effectiveType||''))return;setTimeout(function(){v.addEventListener('playing',function(){v.classList.add('on')},{once:true});v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})},300)});
 </script>
 <script>
 /* кошик: кількість і оформлення замовлення */
@@ -443,7 +423,7 @@ form.addEventListener("submit",e=>{e.preventDefault();if(!form.reportValidity())
 <script>
 /* редизайн: пошук, меню, фото простору = перший крок підбору */
 (function(){
-Object.assign(EN,{"Як це працює":"How it works","Від ідеї до саду — чотири кроки":"From idea to garden in four steps","Підбір":"Selection","Замовлення":"Order","Пакування":"Packing","Посадка":"Planting","Відповідаєте на кілька питань про ділянку, світло й ґрунт — ми пропонуємо рослини, що приживуться.":"You answer a few questions about your plot, light and soil — we suggest plants that will take root.","Додаєте рослини в «Мій сад» і оформлюєте замовлення за хвилину.":"You add plants to “My garden” and place your order in a minute.","Пакуємо в захисні короби із закритим кореневим комом, щоб рослина не відчула дороги.":"We pack plants in protective boxes with a closed root ball, so they barely notice the journey.","Отримуєте за 2–4 дні з інструкцією з посадки та догляду.":"You receive them in 2–4 days with planting and care instructions.","Ваш сад починається з першої рослини":"Your garden starts with the first plant","Підберемо рослини під ваше світло, ґрунт і настрій — і привеземо їх живими та здоровими.":"We’ll match plants to your light, soil and mood — and deliver them alive and healthy.","Затишний будинок у саду з гортензіями":"Cozy house in a garden with hydrangeas","Оцінка 5 з 5":"Rated 5 out of 5","Закрити":"Close","Менше":"Decrease quantity","Більше":"Increase quantity","Меню":"Menu","Мова / Language":"Language","Пошук рослини":"Search plants","Ялина звичайна":"Norway spruce","Класична зелена ялина з густою конічною кроною.":"A classic green spruce with a dense conical crown.","Клен червоний «Атропурпуреум»":"Red maple ‘Atropurpureum’","Створимо сад, де захочеться бути":"We’ll create a garden you’ll want to be in","Продаємо рослини, які перетворять вашу ділянку на сад мрії":"We sell plants that turn your plot into a dream garden"});
+Object.assign(EN,{"Як це працює":"How it works","Від ідеї до саду — чотири кроки":"From idea to garden in four steps","Підбір":"Selection","Замовлення":"Order","Пакування":"Packing","Посадка":"Planting","Відповідаєте на кілька питань про ділянку, світло й ґрунт — ми пропонуємо рослини, що приживуться.":"You answer a few questions about your plot, light and soil — we suggest plants that will take root.","Додаєте рослини в кошик і оформлюєте замовлення за хвилину.":"You add plants to your cart and place your order in a minute.","Пакуємо в захисні короби із закритим кореневим комом, щоб рослина не відчула дороги.":"We pack plants in protective boxes with a closed root ball, so they barely notice the journey.","Отримуєте за 2–4 дні з інструкцією з посадки та догляду.":"You receive them in 2–4 days with planting and care instructions.","Ваш сад починається з першої рослини":"Your garden starts with the first plant","Підберемо рослини під ваше світло, ґрунт і настрій — і привеземо їх живими та здоровими.":"We’ll match plants to your light, soil and mood — and deliver them alive and healthy.","Затишний будинок у саду з гортензіями":"Cozy house in a garden with hydrangeas","Оцінка 5 з 5":"Rated 5 out of 5","Закрити":"Close","Менше":"Decrease quantity","Більше":"Increase quantity","Меню":"Menu","Мова / Language":"Language","Пошук рослини":"Search plants","Ялина звичайна":"Norway spruce","Класична зелена ялина з густою конічною кроною.":"A classic green spruce with a dense conical crown.","Клен червоний «Атропурпуреум»":"Red maple ‘Atropurpureum’","Створимо сад, де захочеться бути":"We’ll create a garden you’ll want to be in","Продаємо рослини, які перетворять":"We sell plants that turn","вашу ділянку на сад мрії":"your plot into a dream garden"});
 $("#q").addEventListener("input",list);
 const ph=()=>{$("#q").placeholder=L=="en"?"Search plants":"Пошук рослини"};ph();
 document.querySelector(".lg").addEventListener("click",ph);
