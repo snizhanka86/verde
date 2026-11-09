@@ -27,6 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-photo-04efccb4.webp" fetchpriority="high">
+<script>/* Текст першого екрана з’являється, коли підвантажились шрифти, — без «стрибка» літер. Якщо шрифти не прийшли за 1,5 с, текст показується так, як є. */
+(function(){var d=document.documentElement,done=0;function go(){if(done)return;done=1;d.classList.remove("fw")}d.classList.add("fw");setTimeout(go,1500);(function poll(){if(done)return;var f=document.fonts;if(!f||!f.load)return go();if(f.size>0){var t="Аа Aa";Promise.all([f.load('500 1em "Cormorant Garamond"',t),f.load('900 1em "Playfair Display"',t),f.load("400 1em Manrope",t),f.load("600 1em Manrope",t)]).then(go,go)}else setTimeout(poll,30)})()})();</script>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap"></noscript>
 <style>
@@ -49,7 +51,7 @@ section{padding:120px 0 0}
 .hero .btn.l{background:rgba(245,241,233,.9);color:var(--lr);box-shadow:none}
 .hero .btn.l:hover{background:#fff}
 /* header */
-header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:5;pointer-events:none;transition:background .3s,box-shadow .3s}
+header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:5;pointer-events:none;transition:background .3s,box-shadow .3s,opacity .3s}
 header.dk{background:var(--paper);box-shadow:0 8px 30px rgba(23,64,44,.1)}
 .nav{pointer-events:auto;max-width:1480px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:16px}
 .logo{font:900 clamp(1.8rem,4.5vw,4.125rem)/1 'Playfair Display',Georgia,serif;letter-spacing:-.02em;color:var(--lr);text-decoration:none;margin-right:auto;transition:font-size .3s}
@@ -85,7 +87,7 @@ header.open .bg span{transform:rotate(45deg)}header.open .bg span::before{transf
 /* легкий шар на фото + м’яка тінь під білим текстом, щоб фото лишалось яскравим, а текст — читабельним */
 .hero h1,.hero .ha p{text-shadow:0 2px 20px rgba(15,42,29,.45)}
 header:not(.dk):not(.open) nav a:not([data-p=catalog]){text-shadow:0 1px 10px rgba(15,42,29,.55)}
-.hc{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:120px max(40px,calc(50vw - 700px)) 72px;will-change:transform,opacity}
+.hc{transition:opacity .3s;position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:120px max(40px,calc(50vw - 700px)) 72px;will-change:transform,opacity}
 .hero h1{font-size:clamp(2.75rem,6.4vw,5.25rem);line-height:1.02;max-width:18ch;text-wrap:balance;margin:0;color:#fff}
 .ha{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
 .hero .ha p{margin:0;color:#fff;max-width:46ch;font-size:1.125rem}
@@ -272,6 +274,8 @@ header nav a[data-p=catalog]:hover,header.dk nav a[data-p=catalog]:hover{backgro
 header.open nav a[data-p=catalog],header.open nav a[data-p=catalog].on{padding:8px 24px;background:var(--lr);color:#fff}
 /* відстані між секціями: 120px на комп’ютері й планшеті, 72px на телефоні (правило стоїть останнім, щоб перебити базові) */
 @media(max-width:760px){section{padding-top:72px}.pg:not(#home){margin-top:72px}.fin{margin-top:72px}}
+/* поки шрифти вантажаться, шапка й текст першого екрана приховані (клас fw з head-скрипта) */
+html.fw header,html.fw .hero .hc{opacity:0}
 </style>
 </head><body>
 <header><div class="nav"><a class="logo" href="#home">VERD<i>E</i></a>
